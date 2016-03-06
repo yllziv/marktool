@@ -1,0 +1,91 @@
+#register {
+    display: none;
+    .RegPage {
+        font-size: 16px;
+        font-family: "Helvetica Neue", Helvetica, Arial;
+    }
+
+    .RegPart {
+        width: 40%;
+        margin-top: 10%;
+        margin-left: 30%;
+    }
+
+    .RegTitle {
+        font-family: arial, sans-serif;
+        color: rgb(100, 168, 226);
+        font-size: 2em;
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+    }
+
+    .bd {
+        width: 380px;
+        margin: 0px auto;
+        text-align: center;
+    }
+
+    .RegPage .RegPart .bd .form {
+        margin-top: 30px;
+    }
+
+    .form .form-item .form-field {
+        margin-top: 25px;
+    }
+    .form .form-buttons {
+        margin: 30px 0px 20px;
+    }
+    .form-field input {
+        width: 300px;
+        height: 30px;
+        padding: 6px 8px;
+        border: 1px solid rgb(170, 170, 170);
+        font-size: 16px;
+        border-radius: 4px;
+    }
+    .form-field input:hover, .form-field input:focus {
+        border-color: rgb(100, 168, 226);
+    }
+    .agree {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    .agree a {
+        color: rgb(100, 168, 226);
+    }
+
+    .desc {
+        padding-top: 15px;
+        color: rgb(153, 153, 153);
+        font-size: 14px;
+        cursor:pointer;
+    }
+    .desc a {
+        color: rgb(153, 153, 153);
+    }
+    .left {
+        float: left;
+    }
+    .right {
+        float: right;
+    }
+
+    .btn {
+        padding: 6px 10px;
+        margin: 10px 10px 0px 0px;
+        width: 300px;
+        height: 40px;
+        border: 1px solid transparent;
+        color: rgb(255, 255, 255);
+        background-color: rgb(100, 168, 226);
+        font-size: 20px;
+        font-weight: bold;
+        display: inline-block;
+        border-radius: 5px;
+        cursor: pointer;
+        background-clip: padding-box;
+        -moz-user-select: none;
+    }
+}

@@ -1,0 +1,170 @@
+#taskdetail{
+  .detailPage{
+    width: 1080px;
+    height: auto;
+    min-height: 800px;
+    margin:20px auto;
+    border: 1px solid rgb(219, 223, 214);
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+    background: rgb(255, 255, 255);
+    opacity: 1;
+    transform: none;
+    transform-origin: 50% 0px 0px;
+  }
+  .detailSec{
+    margin: 0px 50px 40px 50px;
+    min-height: 500px;
+  }
+  .taskTopic{
+    height: 100px;
+    border-bottom: 1px solid rgb(219, 223, 214);
+    padding-top: 20px;
+  }
+  .forPro{
+    font-size: 16px;
+    color:rgb(174, 178, 170) ;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .forPro:hover{overflow: visible;}
+  .forTask{
+    margin-top: 20px;
+    color:rgb(174, 178, 170) ;
+    display: inline-block;
+  }
+  .taskName{
+    font-family: SimSun;
+    font-size: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .taskName:hover{overflow: visible;}
+  .taskPer{
+    font-size: 14px;
+  }
+  .todo-checkbox{
+    position: relative;
+    top: -3px;
+    display: inline-block;
+    width: 25px;
+    vertical-align: middle;
+  }
+  .todo-checkbox label{
+    cursor: pointer;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 0;
+    left: 0;
+    background: #eee;
+    border:1px solid #ddd;
+    border-radius: 5px;
+  }
+  .todo-checkbox label::after{
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 9px;
+    height: 5px;
+    background: transparent;
+    top: 4px;
+    left: 5px;
+    border: 3px solid #333;
+    border-top: none;
+    border-right: none;
+
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+  .todo-checkbox label:hover::after {opacity: 0.5;}
+  .todo-checkbox input[type=checkbox]:checked + label:after {opacity: 1;}
+
+  .beginTask{
+    display: inline-block;
+    margin-left: 100px;
+  }
+  .btn-begin{
+    width: 100px;
+    height: 50px;
+    border:1px solid rgb(100, 168, 226) ;
+    border-radius: 5px;
+    background-color: rgb(255,255,255);
+    font-size: 16px;
+    font-weight:bold;
+    color:rgb(100, 168, 226) ;
+  }
+  .btn-begin:hover{background-color:rgb(100, 168, 226);color:rgb(255,255,255);}
+
+  .commentStream{
+    margin-top: 30px;
+  }
+  .commentUl{
+    position: relative;
+    left: -30px;
+    min-height: 250px;
+  }
+  .commentLi{list-style: none;}
+  .newEvent,.doneEvent{height: 40px;margin-top: 10px;}
+  .tComment{height:70px;margin-top: 30px; }
+  .tComment *{vertical-align: middle;}
+
+  .eventLogo{
+    display: inline-block;
+  }
+  .newEvent span,.doneEvent span{
+    position: relative;
+    top: -10px;
+    color:rgb(174, 178, 170) ;
+    font-size: 16px;
+  }
+  .taskTime{
+    margin-left: 20px;
+  }
+  .taskPer{
+    margin-left: 15px;
+    font-weight: bold;
+  }
+  .taskAction{
+    margin-left: 8px;
+  }
+
+  .perLogo{display: inline-block;}
+  .comDetail{display: inline-block; margin-left: 20px;}
+  .comTime{
+    color:rgb(174, 178, 170);
+    font-size: 14px;
+    margin-left: 6px;
+  }
+  .comPer{font-weight: bold;}
+  .comContent{
+    margin-top: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;}
+  .comContent:hover{overflow: visible;}
+
+  .commentForm{margin-top: 30px;}
+  .commentForm *{vertical-align: middle;}
+  .comText{display: inline-block;}
+  .comText textarea{
+    margin-left: 20px;
+    width: 700px;
+    height: 60px;
+    border-radius: 5px;
+    border:1px solid rgb(100, 168, 226);
+  }
+  .comBtn{display: inline-block;margin-left: 30px;}
+  .comBtn button{
+    width: 100px;
+    height: 50px;
+    padding: 5px;
+    background-color: rgb(100, 168, 226);
+    border:1px solid rgb(100, 168, 226) ;
+    color: rgb(255,255,255);
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  .comBtn button:hover{background-color: rgb(121,176,237);}
+}

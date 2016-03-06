@@ -1,0 +1,236 @@
+$border-grey: #ccc;
+$titleBg: #2f7fd0;
+$taskHeadLine: #f1f2f3;
+$light-blue: #d0eafa;
+$border: #efefef;
+#project {
+  width:1080px;
+  height: auto;
+  min-height: 800px;
+  border:1px solid $border;
+  margin:20px auto;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+
+  /*项目内容开始*/
+  .addProj {
+    .addMenu{
+      overflow:hidden;
+      margin:10px 10px 10px 850px;
+      div{
+        height:16px;
+        width:20px;
+        float:left;
+        cursor:pointer;
+      }
+      .addicon{
+        margin:0 3px;
+        background: url(../img/projection/addicon.png) 0 0 no-repeat;
+      }
+      .addProjBtn{
+        width:60px;
+        vertical-align: middle;
+        font-size:13px;
+        margin:0 5px 0 3px;
+        &:hover{
+          color:$titleBg;
+        }
+      }
+      .raster{
+        width:30px;
+        height:16px;
+        text-align:center;
+        background: url(../img/projection/pingpu_1.png) 10px 0 no-repeat;
+        padding:0 3px;
+        border-left:1px solid $border-grey;
+        &:hover{
+          background: url(../img/projection/pingpu_0.png) 10px 0 no-repeat;
+        }
+      }
+      .addList{
+        margin:0 3px;
+        background: url(../img/projection/liebiao_0.png) 0 0 no-repeat;
+        &:hover{
+          background: url(../img/projection/liebiao_1.png) 0 0 no-repeat;
+        }
+      }
+    }
+
+    ul {
+      width: 920px;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    li {
+      display: inline-block;
+      width: 250px;
+      height: 130px;
+      text-align: center;
+      margin: 25px;
+      border: 1px solid #fff;
+      border-radius: 5px;
+      cursor:pointer;
+      &:hover{
+        background: #f1f2f3;
+        border: 1px solid lighten($border-grey,10);
+      }
+
+      img {
+        margin: 10px auto 5px auto;
+        width:45px;
+        height:45px;
+      }
+      p{
+        font-size:20px;
+      }
+    }
+
+  }
+  /*项目内容开始*/
+
+  /*项目日期开始*/
+  .proDate {
+    margin: 20px 0;
+
+    .subproDate {
+      span {
+        display: inline-block;
+        width: 120px;
+        text-align: center;
+        margin-left: 80px;
+        margin-right: 20px;
+        padding-left:15px;
+        font-size:15px;
+        font-weight:bold;
+        &:first-child{
+          background: url(../img/projection/start.png) 0 3px no-repeat;
+        }
+        &:nth-child(3){
+          background: url(../img/projection/end.png) 0 3px no-repeat;
+        }
+      }
+      input{
+        width:200px;
+      }
+    }
+  }
+  /*项目日期结束*/
+
+  /*项目人员开始*/
+  .proPeople {
+    position: relative;
+    ul {
+      width: 970px;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      flex-wrap: wrap;
+    }
+    li {
+      display: inline-block;
+      width: 175px;
+      height:50px;
+      text-align: center;
+      margin: 15px 30px;
+      border-radius: 10px;
+      border: 1px solid #fff;
+      overflow:hidden;
+      cursor:pointer;
+      &:hover{
+        border: 1px solid $border-grey;
+        background: #fff;
+        .fork{
+          display: block;
+        }
+      }
+      .icon{
+        float:left;
+        width:50px;
+        height:50px;
+      }
+      .describ{
+        float:left;
+        width:90px;
+        text-align:left;
+        margin-left:10px;
+        h5{
+          font-size:14px;
+          font-weight:bold;
+          margin-top:6px;
+        }
+      }
+      .fork{
+        float:left;
+        width:20px;
+        height:100%;
+        display: none;
+        background: url(../img/projection/fork.png) 0 16px no-repeat;
+      }
+    }
+
+  }
+
+  .proList {
+    position: relative;
+  }
+
+  .proTitle {
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-left:80px;
+    color:$titleBg;
+    padding-bottom:10px;
+    margin-top:10px;
+    margin-bottom:20px;
+    border-bottom:1px solid $border-grey;
+  }
+  .proSubTitle {
+    position:absolute;
+    top:0;
+    right:40px;
+    padding-left:20px;
+    vertical-align:middle;
+    background: url(../img/projection/addicon.png) 0 2px no-repeat;
+    cursor:pointer;
+    &:hover{
+      color:$titleBg;
+    }
+  }
+  /*项目人员结束*/
+
+  /*图层列表开始*/
+  .layerList {
+    width: 85%;
+    margin: 20px auto;
+    border: 1px solid $border-grey;
+    th{
+      font-weight:bold;
+    }
+    tr {
+      border: 1px solid $border-grey;
+    }
+    th, td {
+      text-align: center;
+      line-height: 3em;
+    }
+    td:last-child{
+      opacity: 0;
+      background: url(../img/projection/delete.png) 5px 13px no-repeat;
+
+    }
+    tr:hover{
+      background-color:lighten($border-grey,10);
+      td:last-child{
+        opacity: 1;
+        cursor:pointer;
+      }
+    }
+  }
+  /*图层列表结束*/
+
+}
+

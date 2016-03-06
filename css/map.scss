@@ -1,0 +1,238 @@
+$border-grey: #ccc;
+$titleBg: #2f7fd0;
+$taskHeadLine: #f1f2f3;
+$light-blue: #d0eafa;
+
+#map{
+  //******************* toolBar *********************
+
+  .toolBar {
+
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px $border-grey solid;
+    font-size: 14px;
+    .tools {
+      height: 30px;
+      margin: 10px 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+
+
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding:5px 10px;
+    }
+    li {
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .toolOne {
+      width: 100px;
+    }
+
+    .toolScan {
+      width: 180px;
+      border-left: 1px $border-grey solid;
+      border-right: 1px $border-grey solid;
+    }
+
+    .toolChoose {
+      width: 300px;
+      ul{
+        margin:2px 0 0 0;
+        padding:0;
+      }
+      li {
+        background: $light-blue;
+        line-height: 16px;
+        padding: 0px 10px;
+        border-radius: 3px;
+        height: 25px;
+        position: relative;
+        width: 100px;
+        border: 1px solid $light-blue;
+        img {
+          position: absolute;
+          top: 5px;
+        }
+        span {
+          position: absolute;
+          top: 5px;
+          left: 30px;
+
+        }
+
+        &:hover {
+          border: 1px solid $titleBg;
+        }
+      }
+    }
+  }
+
+  //******************* task *********************
+  .Layers {
+    width: 230px;
+    float: left;
+    height: 100%;
+    border-right: 1px solid $border-grey;
+    .headline {
+      background: $taskHeadLine;
+      height: 30px;
+      font-size: 1.3em;
+      color: $titleBg;
+      line-height: 30px;
+      padding-left: 20px;
+    }
+    .taskLayers {
+      height: 280px;
+      .layer {
+        padding: 20px 20px 10px 20px;
+      }
+      ul {
+        padding:0 40px;
+      }
+      .symbol {
+        padding: 5px 20px;
+        cursor: pointer;
+      }
+    }
+    .taskDesc {
+
+      .taskDescContent {
+        padding: 20px;
+      }
+    }
+    .taskPp {
+
+      .taskPpContent {
+        position: relative;
+        margin: 10px 20px;
+      }
+      select {
+        width: 200px;
+        height: 25px;
+        border: 1px solid $border-grey;
+      }
+    }
+    .taskDate {
+
+      .taskDateContent {
+        position: relative;
+        margin: 10px 20px;
+      }
+      input {
+        width: 200px;
+        height: 25px;
+        border: 1px solid $border-grey;
+      }
+    }
+    .sureButton {
+      display: block;
+      width: 80px;
+      margin: 10px auto;
+      line-height: 30px;
+      font-size: 1.2em;
+      color: #fff;
+      background: $titleBg;
+      border-radius: 5px;
+      text-align: center;
+      cursor:pointer;
+    }
+  }
+
+
+
+  //******************* map *********************
+  .mapContent {
+    width: 55%;
+    height:80%;
+    margin-left: 230px;
+  }
+
+  //******************task list *****************
+
+  .taskList {
+    width: 300px;
+    position: absolute;
+    top: 130px;
+    right: 0;
+    border-left: 1px solid $border-grey;
+    height: 82%;
+
+    .taskListHead {
+      margin-top: 20px;
+      height:30px;
+      ul {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        li {
+          display: inline-block;
+          width: 40%;
+
+          text-align: center;
+          line-height: 29px;
+          cursor:pointer;
+        }
+        .selectedTab {
+          color: $titleBg;
+          border-top: 1px solid $border-grey;
+          border-left: 1px solid $border-grey;
+          border-right: 1px solid $border-grey;
+          border-bottom: 1px solid #fff;
+        }
+      }
+      border-bottom: 1px solid $border-grey;
+    }
+
+    .list {
+      margin: 10px;
+
+      .listContent {
+        margin: 20px 0;
+        li {
+          line-height: 16px;
+          padding-left: 5px;
+          span {
+            padding-left: 5px;
+          }
+        }
+        li+li {
+          padding-top: 5px;
+        }
+      }
+      .line {
+
+        width: 90%;
+        margin: auto;
+        border-bottom: 1px solid $border-grey;
+      }
+      table, td, th {
+        border: 1px solid $border-grey;
+        text-align: center;
+      }
+      table {
+        width: 90%;
+        margin: 10px auto;
+        text-align: center;
+        line-height: 30px;
+      }
+      .subTitle {
+        padding: 10px;
+        color: $titleBg;
+        span {
+          color:red;
+        }
+      }
+    }
+  }
+}

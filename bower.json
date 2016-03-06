@@ -1,0 +1,22 @@
+{
+  "name": "marktool",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "yll <yll.ziv@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.1",
+    "underscore": "~1.8.3"
+  }
+}

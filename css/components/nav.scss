@@ -1,0 +1,180 @@
+$border-grey: #ccc;
+$titleBg: #2f7fd0;
+$taskHeadLine: #f1f2f3;
+$light-blue: #d0eafa;
+
+//**************** nav ************************
+.nav {
+  width: 100%;
+  min-width: 1000px;
+  height: 80px;
+  background-color: $titleBg;
+  color: #ffffff;
+  position: relative;
+  div {
+    float: left;
+  }
+  ul {
+    list-style: none;
+  }
+  li {
+    float: left;
+  }
+  .navleft {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 80px;
+    padding: 0 20px;
+  }
+  .navcenter {
+    font-size: 20px;
+    margin: 25px 10px;
+    ul {
+      color: #cccccc;
+      li {
+        margin: 0 10px;
+        cursor: pointer;
+        &:hover {
+          color: #ffffff;
+        }
+        a {
+          text-decoration: none;
+        }
+      }
+      .clicked {
+        color: #fff;
+      }
+    }
+  }
+  .navright {
+    li {
+      position: absolute;
+      top: 30px;
+    }
+    .search,.news{
+      img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+      }
+    }
+    .searchcotent{
+      right:230px;
+      input {
+        border-style: none;
+        background-color: $titleBg;
+        outline: none;
+        border-bottom:1px dashed $border-grey;
+        color:#fff;
+        font-size:15px;
+      }
+
+    }
+    .search {
+      right: 200px;
+    }
+    /*通知开始*/
+    .news {
+      right: 150px;
+      -webkit-animation: newswap 0.8s infinite;
+    }
+    @-webkit-keyframes newswap {
+      0% {-webkit-transform: rotate(10deg);}
+      25% {-webkit-transform: rotate(0deg);}
+      50% {-webkit-transform: rotate(-10deg);}
+      75% {-webkit-transform: rotate(0deg);}
+      100% {-webkit-transform: rotate(10deg);}
+    }
+    .tipnum{
+      top:20px;
+      right:142px;
+      width:20px;
+      height:20px;
+      border-radius:20px;
+      background-color: #b90000;
+      box-shadow:0 0 3px red;
+      color:#fff;
+      text-align:center;
+      line-height:20px;
+
+    }
+
+    /*通知结束*/
+
+    /*我自己开始*/
+    .myself {
+      right:90px;
+      top:25px;
+      cursor:pointer;
+      img{
+        width:30px;
+        height:30px;
+        border-radius:30px;
+        &:hover{
+          box-shadow:0 2px 1px $border-grey;
+        }
+      }
+      &:hover + .jt{
+        background: url(../img/jt_0.png) 0 0 no-repeat;
+      }
+    }
+    .jt {
+      right:74px;
+      top:33px;
+      cursor:pointer;
+      width:16px;
+      height:16px;
+      background: url(../img/jt_1.png) 0 0 no-repeat;
+    }
+    /*我自己结束*/
+
+    /*我自己菜单开始*/
+    .mymenu{
+      display: none;
+      position:absolute;
+      top:73px;
+      right:25px;
+      width:150px;
+      height:80px;
+      z-index:2;
+      background-color: #fff;
+      border-radius:5px;
+      border:1px solid $border-grey;
+      .uparrow{
+        width:15px;
+        height:15px;
+        position:absolute;
+        top:-9px;
+        right:72px;
+        -webkit-transform:rotate(45deg);
+        border-top:1px solid $border-grey;
+        border-left:1px solid $border-grey;
+        background-color: #fff;
+      }
+      .menulist{
+        color: #616161;
+        width:150px;
+        height:80px;
+        ul{
+          width:100%;
+          height:100%;
+        }
+        li{
+          padding:5px 10px ;
+          font-size:15px;
+          position:relative;
+          float:none;
+          top:10px;
+          cursor:pointer;
+          &:hover{
+            background-color: $taskHeadLine;
+          }
+
+        }
+      }
+
+    }
+    /*我自己菜单结束*/
+  }
+
+}

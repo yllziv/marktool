@@ -1,0 +1,104 @@
+$border-grey: #ccc;
+$titleBg: #2f7fd0;
+$taskHeadLine: #f1f2f3;
+$light-blue: #d0eafa;
+$border: #efefef;
+$fontcolor: #99979a;
+$bluecolor: #2e80d0;
+
+#task {
+  width: 1080px;
+  height: auto;
+  min-height: 800px;
+  margin: 20px auto;
+  border: 1px solid $border;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  .topinfo {
+    width: 90%;
+    margin: 10px auto;
+    height: 90px;
+    border-bottom: 2px solid $titleBg;
+    h1 {
+      float: left;
+      font-size: 40px;
+      line-height: 100px;
+    }
+    .rightinfo {
+      float: right;
+      width: 200px;
+      font-size: 20px;
+      color:$titleBg;
+      padding-top: 17px;
+      text-align: center;
+      .num {
+        float: left;
+        padding-right: 20px;
+        border-right: 1px solid $titleBg;
+
+      }
+      .people {
+        padding-left: 20px;
+        float: left;
+      }
+    }
+
+  }
+
+  /*任务菜单开始*/
+  .taskmenu {
+    width: 1000px;
+    margin: 0 auto;
+    height: 50px;
+    .taskinfo {
+      float: left;
+      font-size: 20px;
+      color: lighten($titleBg, 10);
+      .untasked {
+        padding: 0 10px;
+        border-right: 1px solid $titleBg;
+        cursor: pointer;
+        &:hover {
+          color: darken($titleBg, 10);
+        }
+      }
+      .tasked {
+        padding-right: 10px;
+        cursor: pointer;
+        &:hover {
+          color: darken($titleBg, 10);
+        }
+      }
+    }
+    .addtask {
+      float: left;
+      margin: 5px 10px 0 20px;
+      cursor: pointer;
+      .content {
+        font-size: 14px;
+        padding: 5px 5px 5px 24px;
+        border: 1px solid $border-grey;
+        color: $border-grey;
+        text-align: left;
+        border-radius: 5px;
+        vertical-align: bottom;
+        background: url(../img/task/add.png) 5px 6px no-repeat;
+        &:hover {
+          border-color: darken($titleBg, 10);
+          color: darken($titleBg, 10);
+          background: url(../img/task/add-1.png) 5px 6px no-repeat;
+        }
+      }
+
+    }
+  }
+  /*任务菜单结束*/
+
+  /*任务列表开始*/
+  .tasklist {
+    width:1000px;
+    margin:0 auto;
+    @import "./components/tasklist";
+  }
+  /*任务列表结束*/
+}

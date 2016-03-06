@@ -1,0 +1,164 @@
+$border-grey: #ccc;
+$titleBg: #2f7fd0;
+$taskHeadLine: #f1f2f3;
+$light-blue: #d0eafa;
+
+#active {
+  width: 1080px;
+  margin: 20px auto;
+  border: 1px solid rgb(219, 223, 214);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+  background: rgb(255, 255, 255);
+  .dynamicContainer {
+    margin: 0px 20px 40px 50px;
+    min-height: 500px;
+  }
+  .dynamic-filter {
+    margin-top: 20px;
+  }
+  #filterSet {
+    cursor: pointer;
+    color: rgb(174, 178, 170);
+    &:hover {
+      color: rgb(100, 168, 226);
+    }
+  }
+
+  .dynamic-section {
+    margin-top: 30px;
+  }
+  .dynamicUl {
+    position: relative;
+    left: -40px;
+  }
+  li {
+    list-style: none;
+  }
+
+  .dynamic-title-day {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 28px;
+    font-weight: bold;
+    color: lighten($titleBg, 10);
+    border: 4px solid lighten($titleBg, 20);
+    border-radius: 50%;
+    text-align: center;
+  }
+  .dynamic-title-date {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    color: #769bb3;
+    border: 4px solid #d2e8ea;
+    border-radius: 50%;
+    text-align: center;
+  }
+  .event-date {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 6px 0 0 0;
+  }
+  .event-day {
+    display: block;
+    font-size: 12px;
+    color: #555;
+  }
+
+  .dynamic-project {
+    position: relative;
+    top: -30px;
+    left: 18px;
+  }
+  .event-title {
+    position: relative;
+  }
+  .titleLine {
+    display: inline-block;
+    height: 10px;
+    width: 950px;
+    margin-left: 45px;
+    border-top: 1px solid rgb(100, 168, 226);
+  }
+  .event-ProName {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(174, 178, 170);
+    padding-left: 10px;
+    right: 10px;
+    top: -10px;
+    background-color: #fff;
+  }
+  .event-desc {
+    width: 700px;
+    height: 70px;
+    margin-left: 28px;
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 20px;
+  }
+  .event-desc * {
+    vertical-align: middle;
+    font-size: 14px;
+  }
+  .perLogo {
+    display: inline-block;
+  }
+  .event-actor {
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  .event-action {
+    margin-left: 10px;
+  }
+  .event-text {
+    margin-left: 6px;
+  }
+  /*.event-actor,.event-action,.event-text{position:relative;top: -10px; }*/
+
+  .dynamic-day {
+    margin-top: 20px;
+  }
+  .dynamic-content {
+    margin-bottom: 20px;
+  }
+
+  #filterBd {
+    display: none;
+  }
+  .personnelList {
+    border: 1px solid rgb(204, 204, 204);
+    font-size: 16px;
+    padding: 5px 0px;
+    position: absolute;
+    top: 50px;
+    left: 210px;
+    width: 120px;
+    height: 150px;
+    overflow-y: scroll;
+    margin: 5px 0px 0px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 4px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  }
+  .personnelList a {
+    display: block;
+    padding: 3px 12px;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .personnelList li {
+    list-style: none;
+    height: 30px;
+  }
+  .personnelList a:hover {
+    background-color: rgb(238, 238, 238);
+  }
+
+}

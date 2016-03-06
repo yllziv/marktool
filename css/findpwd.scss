@@ -1,0 +1,86 @@
+#findpwd {
+    display: none;
+    input {
+        outline:none;
+    }
+    .FindPage {
+        font-size: 16px;
+        font-family: "Helvetica Neue", Helvetica, Arial;
+    }
+
+    .FindPart {
+        width: 600px;
+        overflow: hidden;
+        margin: 80px auto 0px;
+        border-radius: 5px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .FindPart .hd {
+        background: rgb(121, 176, 237) none repeat scroll 0% 0%;
+        color: rgb(255, 255, 255);
+        line-height: 60px;
+        height: 80px;
+        padding: 0px 30px;
+    }
+    .FindPart .hd .logo {
+        float: left;
+        width: 200px;
+        font-size: 2em;
+        padding-top: 20px;
+        font-weight: bold;
+    }
+    .FindPart .hd .title {
+        display: block;
+        font-size: 20px;
+        line-height: 20px;
+        padding: 40px 0px 17px;
+    }
+
+    .FindPart .bd {
+        background: rgb(255, 255, 255) none repeat scroll 0% 0%;
+        padding: 30px;
+        text-align: center;
+
+    }
+
+    .form .form-item .form-label {
+        font-size: 16px;
+        color: rgb(85, 85, 85);
+        margin: 0px 0px 0px 2px;
+    }
+
+    .form .form-item .form-field {
+        margin-top: 15px;
+    }
+    .form .form-item input {
+        width: 280px;
+        height: 30px;
+        padding: 6px 8px;
+        border: 1px solid rgb(170, 170, 170);
+        font-size: 18px;
+        border-radius: 4px;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1) inset;
+        &:hover,&:focus {
+            border-color: rgb(100, 168, 226);
+        }
+    }
+
+    .btn {
+        padding: 6px 10px;
+        margin: 20px 10px 0px 0px;
+        width: 280px;
+        height: 40px;
+        border: 1px solid transparent;
+        color: rgb(255, 255, 255);
+        background-color: rgb(100, 168, 226);
+        font-size: 20px;
+        font-weight: bold;
+        display: inline-block;
+        border-radius: 5px;
+        cursor: pointer;
+        background-clip: padding-box;
+        -moz-user-select: none;
+    }
+
+}

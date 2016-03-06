@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--js库开始-->
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
+    <!--js库结束-->
+
+    <!--css样式开始-->
+    <link type="text/css" rel="stylesheet" href="../css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="../css/index.css" />
+    <!--css样式结束-->
+</head>
+<body>
+<!--导航栏开始-->
+<div class="nav">
+    <div class="navleft">协同标注工具</div>
+    <div class="navcenter">
+        <ul>
+            <li id="projectNav" class="clicked"><a>项目</a></li>
+            <li id="taskNav"><a>任务</a></li>
+            <li id="activeNav"><a>动态</a></li>
+            <li id="mapNav"><a>地图</a></li>
+            <li id="myselfNav"><a>我自己</a></li>
+        </ul>
+    </div>
+    <div class="navright">
+        <ul>
+            <!--<li class="search"><img src="img/search.png"/></li>-->
+            <!--<li class="searchcotent">-->
+                <!--<input type="text" placeholder="搜索"/>-->
+            <!--</li>-->
+            <li class="news"><img src="../img/news.png"/></li>
+            <li class="tipnum">8</li>
+            <li class="myself" ><img src="../img/touxiang.png"/></li>
+            <li class="jt" ></li>
+        </ul>
+        <div class="mymenu">
+            <div class="uparrow"></div>
+            <div class="menulist">
+                <ul>
+                    <li>个人设置</li>
+                    <li>退出</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--导航栏结束-->
+<div id="contentframe">
+    <iframe src="../view/project.html"  id="Iframe" frameborder="0" scrolling="no" style="border:0;width:1200px; margin:0 auto; display:none" onload="HomePg.autoHeight();"></iframe>
+</div>
+
+<!--自定义脚本开始-->
+<script src="../js/home.js"></script>
+<!--自定义脚本结束-->
+</body>
+</html>

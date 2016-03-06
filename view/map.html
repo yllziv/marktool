@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--js库开始-->
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
+    <!--js库结束-->
+
+    <!--css样式开始-->
+    <link type="text/css" rel="stylesheet" href="../css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="../css/index.css" />
+    <!--css样式结束-->
+</head>
+<div id="map">
+    <!--toolBar start-->
+    <div class="toolBar">
+        <div class="tools">
+            <div class="toolOne">
+                <ul>
+                    <li><img src="../img/newFile.png"></li>
+                    <li><img src="../img/save.png"></li>
+                </ul>
+            </div>
+            <div class="toolScan">
+                <ul>
+                    <li><img src="../img/large.png"></li>
+                    <li><img src="../img/small.png"></li>
+                    <li><img src="../img/scan.png"></li>
+                    <li><img src="../img/hand.png"></li>
+                </ul>
+            </div>
+            <div class="toolChoose">
+                <ul>
+                    <li><img src="../img/jx.png"><span>按矩形选择</span></li>
+                    <li><img src="../img/dbx.png"><span>按多边形选择</span></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!--toolBar end-->
+
+
+    <!--task start-->
+
+    <div class="Layers">
+        <form>
+            <div class="taskLayers">
+                <div class="headline">任务图层</div>
+                <div class="taskLayersContent">
+                    <div class="layer">
+                        <img src="../img/layer.jpg">
+                        <span>图层</span>
+                    </div>
+                    <ul>
+                        <li><label><input type="checkbox" value="layer1" />&nbsp layer1</label>
+                        </li>
+                        <img class="symbol"  src="../img/symbol.jpg">
+                        <li><label><input type="checkbox" value="newtask.layer2"/>&nbsp layer2</label>
+                        </li>
+                        <img class="symbol" src="../img/symbol.jpg">
+                    </ul>
+                </div>
+            </div>
+            <div class="taskDesc">
+                <div class="headline">任务描述</div>
+                <div class="taskDescContent">
+                    <textarea></textarea>
+                </div>
+            </div>
+            <div class="taskPp">
+                <div class="headline">指派人员</div>
+                <div class="taskPpContent">
+                    <select>
+                        <option>one</option>
+                        <option>two</option>
+                        <option>three</option>
+                    </select>
+                </div>
+            </div>
+            <div class="taskDate">
+                <div class="headline">截至日期</div>
+                <div class="taskDateContent">
+                    <input type="date" />
+                </div>
+            </div>
+            <button class="sureButton">确定</button>
+        </form>
+
+    </div>
+    <!--task end-->
+
+    <!--map start-->
+    <div class="mapContent"></div>
+    <!--map end-->
+
+    <!--task list start-->
+    <div class="taskList">
+        <div class="taskListHead">
+            <ul>
+                <li>任务列表</li>
+                <li>任务进度</li>
+            </ul>
+        </div>
+        <!-- task list-->
+        <div class="list taskTable" >
+            <div>
+                <ul class="listContent" maptask-item>
+                    <li>
+                        <img src="../img/icon_ren.png">
+                        <span>名称</span>
+                    </li>
+                    <li>
+                        <img src="../img/icon_renwu.png">
+                        <span>任务</span>
+                    </li>
+                    <li>
+                        <img src="../img/icon_riqi.png">
+                        <span>日期</span>
+                    </li>
+                </ul>
+
+                <div class="line"></div>
+            </div>
+        </div>
+
+        <!-- task progress-->
+        <div class="list taskProgress">
+            <p class="subTitle">已标注总数: <span>106</span></p>
+            <table>
+                <tr>
+                    <th>标注</th>
+                    <th>时间</th>
+                </tr>
+                <tr>
+                    <td>polygon01</td>
+                    <td>2016年1月28日 15:08:20</td>
+                </tr>
+                <tr>
+                    <td>polygon01</td>
+                    <td>2016年1月28日 15:08:20</td>
+                </tr>
+                <tr>
+                    <td>polygon01</td>
+                    <td>2016年1月28日 15:08:20</td>
+                </tr>
+            </table>
+            <p class="subTitle">标注属性</p>
+            <table>
+                <tr>
+                    <th>属性名</th>
+                    <th>属性值</th>
+                </tr>
+                <tr>
+                    <td>ID</td>
+                    <td>001</td>
+                </tr>
+                <tr>
+                    <td>类型</td>
+                    <td>线</td>
+                </tr>
+                <tr>
+                    <td>等级</td>
+                    <td>1</td>
+                </tr>
+            </table>
+
+        </div>
+    </div>
+    <!--task list end-->
+</div>
+</body>
+</html>

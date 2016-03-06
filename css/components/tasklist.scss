@@ -1,0 +1,77 @@
+.onelist {
+  position: relative;
+  margin-left: -20px;
+  margin-bottom:6px;
+  &:hover {
+    .popup {
+      display: block;
+    }
+  }
+  input {
+    width: 20px;
+    height: 20px;
+    vertical-align: bottom;
+    cursor: pointer;
+  }
+  label {
+    font-size: 17px;
+    margin-left: 5px;
+    vertical-align: middle;
+    cursor: pointer;
+    &:hover {
+      color: $bluecolor;
+    }
+  }
+  .append {
+    display: inline-block;
+    height: 20px;
+    padding: 0 10px;
+    margin: 0 5px;
+    background-color: lighten($fontcolor, 30);
+    color: $fontcolor;
+    border-radius: 7px;
+    vertical-align: middle;
+    font-size: 13px;
+    cursor: pointer;
+    &:hover {
+      color: darken($fontcolor, 30);
+    }
+  }
+  .popup {
+    width: 80px;
+    height: 24px;
+    position: absolute;
+    top: 0;
+    left: -80px;
+    background-color: #fff;
+    border: 1px lighten($fontcolor, 20);
+    border-style: solid none solid solid;
+    border-radius: 5px 0 0 5px;
+    display: none;
+    div {
+      width: 20px;
+      height: 20px;
+      margin-left: 5px;
+      float: left;
+      cursor: pointer;
+    }
+    .delete {
+      background: url(../img/myself/todo-actions-icon.png) 0 5px no-repeat;
+      &:hover {
+        background: url(../img/myself/todo-actions-icon.png) -29px 5px no-repeat;
+      }
+    }
+    .edit {
+      background: url(../img/myself/todo-actions-icon.png) 0 -25px no-repeat;
+      &:hover {
+        background: url(../img/myself/todo-actions-icon.png) -29px -25px no-repeat;
+      }
+    }
+    .start {
+      background: url(../img/myself/todo-actions-icon.png) 0 -55px no-repeat;
+      &:hover {
+        background: url(../img/myself/todo-actions-icon.png) -29px -55px no-repeat;
+      }
+    }
+  }
+}

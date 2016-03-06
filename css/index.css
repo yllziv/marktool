@@ -1,0 +1,1380 @@
+@charset "UTF-8";
+.nav {
+  width: 100%;
+  min-width: 1000px;
+  height: 80px;
+  background-color: #2f7fd0;
+  color: #ffffff;
+  position: relative; }
+  .nav div {
+    float: left; }
+  .nav ul {
+    list-style: none; }
+  .nav li {
+    float: left; }
+  .nav .navleft {
+    font-size: 40px;
+    font-weight: bold;
+    line-height: 80px;
+    padding: 0 20px; }
+  .nav .navcenter {
+    font-size: 20px;
+    margin: 25px 10px; }
+    .nav .navcenter ul {
+      color: #cccccc; }
+      .nav .navcenter ul li {
+        margin: 0 10px;
+        cursor: pointer; }
+        .nav .navcenter ul li:hover {
+          color: #ffffff; }
+        .nav .navcenter ul li a {
+          text-decoration: none; }
+      .nav .navcenter ul .clicked {
+        color: #fff; }
+  .nav .navright {
+    /*ΘÇÜτƒÑσ╝Çσºï*/
+    /*ΘÇÜτƒÑτ╗ôµ¥ƒ*/
+    /*µêæΦç¬σ╖▒σ╝Çσºï*/
+    /*µêæΦç¬σ╖▒τ╗ôµ¥ƒ*/
+    /*µêæΦç¬σ╖▒ΦÅ£σìòσ╝Çσºï*/
+    /*µêæΦç¬σ╖▒ΦÅ£σìòτ╗ôµ¥ƒ*/ }
+    .nav .navright li {
+      position: absolute;
+      top: 30px; }
+    .nav .navright .search img, .nav .navright .news img {
+      width: 20px;
+      height: 20px;
+      cursor: pointer; }
+    .nav .navright .searchcotent {
+      right: 230px; }
+      .nav .navright .searchcotent input {
+        border-style: none;
+        background-color: #2f7fd0;
+        outline: none;
+        border-bottom: 1px dashed #ccc;
+        color: #fff;
+        font-size: 15px; }
+    .nav .navright .search {
+      right: 200px; }
+    .nav .navright .news {
+      right: 150px;
+      -webkit-animation: newswap 0.8s infinite; }
+@-webkit-keyframes newswap {
+  0% {
+    -webkit-transform: rotate(10deg); }
+  25% {
+    -webkit-transform: rotate(0deg); }
+  50% {
+    -webkit-transform: rotate(-10deg); }
+  75% {
+    -webkit-transform: rotate(0deg); }
+  100% {
+    -webkit-transform: rotate(10deg); } }
+    .nav .navright .tipnum {
+      top: 20px;
+      right: 142px;
+      width: 20px;
+      height: 20px;
+      border-radius: 20px;
+      background-color: #b90000;
+      box-shadow: 0 0 3px red;
+      color: #fff;
+      text-align: center;
+      line-height: 20px; }
+    .nav .navright .myself {
+      right: 90px;
+      top: 25px;
+      cursor: pointer; }
+      .nav .navright .myself img {
+        width: 30px;
+        height: 30px;
+        border-radius: 30px; }
+        .nav .navright .myself img:hover {
+          box-shadow: 0 2px 1px #ccc; }
+      .nav .navright .myself:hover + .jt {
+        background: url(../img/jt_0.png) 0 0 no-repeat; }
+    .nav .navright .jt {
+      right: 74px;
+      top: 33px;
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+      background: url(../img/jt_1.png) 0 0 no-repeat; }
+    .nav .navright .mymenu {
+      display: none;
+      position: absolute;
+      top: 73px;
+      right: 25px;
+      width: 150px;
+      height: 80px;
+      z-index: 2;
+      background-color: #fff;
+      border-radius: 5px;
+      border: 1px solid #ccc; }
+      .nav .navright .mymenu .uparrow {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        top: -9px;
+        right: 72px;
+        -webkit-transform: rotate(45deg);
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        background-color: #fff; }
+      .nav .navright .mymenu .menulist {
+        color: #616161;
+        width: 150px;
+        height: 80px; }
+        .nav .navright .mymenu .menulist ul {
+          width: 100%;
+          height: 100%; }
+        .nav .navright .mymenu .menulist li {
+          padding: 5px 10px;
+          font-size: 15px;
+          position: relative;
+          float: none;
+          top: 10px;
+          cursor: pointer; }
+          .nav .navright .mymenu .menulist li:hover {
+            background-color: #f1f2f3; }
+
+#project {
+  width: 1080px;
+  height: auto;
+  min-height: 800px;
+  border: 1px solid #efefef;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  /*Θí╣τ¢«σåàσ«╣σ╝Çσºï*/
+  /*Θí╣τ¢«σåàσ«╣σ╝Çσºï*/
+  /*Θí╣τ¢«µùÑµ£ƒσ╝Çσºï*/
+  /*Θí╣τ¢«µùÑµ£ƒτ╗ôµ¥ƒ*/
+  /*Θí╣τ¢«Σ║║σæÿσ╝Çσºï*/
+  /*Θí╣τ¢«Σ║║σæÿτ╗ôµ¥ƒ*/
+  /*σ¢╛σ▒éσêùΦí¿σ╝Çσºï*/
+  /*σ¢╛σ▒éσêùΦí¿τ╗ôµ¥ƒ*/ }
+  #project .addProj .addMenu {
+    overflow: hidden;
+    margin: 10px 10px 10px 850px; }
+    #project .addProj .addMenu div {
+      height: 16px;
+      width: 20px;
+      float: left;
+      cursor: pointer; }
+    #project .addProj .addMenu .addicon {
+      margin: 0 3px;
+      background: url(../img/projection/addicon.png) 0 0 no-repeat; }
+    #project .addProj .addMenu .addProjBtn {
+      width: 60px;
+      vertical-align: middle;
+      font-size: 13px;
+      margin: 0 5px 0 3px; }
+      #project .addProj .addMenu .addProjBtn:hover {
+        color: #2f7fd0; }
+    #project .addProj .addMenu .raster {
+      width: 30px;
+      height: 16px;
+      text-align: center;
+      background: url(../img/projection/pingpu_1.png) 10px 0 no-repeat;
+      padding: 0 3px;
+      border-left: 1px solid #ccc; }
+      #project .addProj .addMenu .raster:hover {
+        background: url(../img/projection/pingpu_0.png) 10px 0 no-repeat; }
+    #project .addProj .addMenu .addList {
+      margin: 0 3px;
+      background: url(../img/projection/liebiao_0.png) 0 0 no-repeat; }
+      #project .addProj .addMenu .addList:hover {
+        background: url(../img/projection/liebiao_1.png) 0 0 no-repeat; }
+  #project .addProj ul {
+    width: 920px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap; }
+  #project .addProj li {
+    display: inline-block;
+    width: 250px;
+    height: 130px;
+    text-align: center;
+    margin: 25px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer; }
+    #project .addProj li:hover {
+      background: #f1f2f3;
+      border: 1px solid #e6e6e6; }
+    #project .addProj li img {
+      margin: 10px auto 5px auto;
+      width: 45px;
+      height: 45px; }
+    #project .addProj li p {
+      font-size: 20px; }
+  #project .proDate {
+    margin: 20px 0; }
+    #project .proDate .subproDate span {
+      display: inline-block;
+      width: 120px;
+      text-align: center;
+      margin-left: 80px;
+      margin-right: 20px;
+      padding-left: 15px;
+      font-size: 15px;
+      font-weight: bold; }
+      #project .proDate .subproDate span:first-child {
+        background: url(../img/projection/start.png) 0 3px no-repeat; }
+      #project .proDate .subproDate span:nth-child(3) {
+        background: url(../img/projection/end.png) 0 3px no-repeat; }
+    #project .proDate .subproDate input {
+      width: 200px; }
+  #project .proPeople {
+    position: relative; }
+    #project .proPeople ul {
+      width: 970px;
+      margin: auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      flex-wrap: wrap; }
+    #project .proPeople li {
+      display: inline-block;
+      width: 175px;
+      height: 50px;
+      text-align: center;
+      margin: 15px 30px;
+      border-radius: 10px;
+      border: 1px solid #fff;
+      overflow: hidden;
+      cursor: pointer; }
+      #project .proPeople li:hover {
+        border: 1px solid #ccc;
+        background: #fff; }
+        #project .proPeople li:hover .fork {
+          display: block; }
+      #project .proPeople li .icon {
+        float: left;
+        width: 50px;
+        height: 50px; }
+      #project .proPeople li .describ {
+        float: left;
+        width: 90px;
+        text-align: left;
+        margin-left: 10px; }
+        #project .proPeople li .describ h5 {
+          font-size: 14px;
+          font-weight: bold;
+          margin-top: 6px; }
+      #project .proPeople li .fork {
+        float: left;
+        width: 20px;
+        height: 100%;
+        display: none;
+        background: url(../img/projection/fork.png) 0 16px no-repeat; }
+  #project .proList {
+    position: relative; }
+  #project .proTitle {
+    font-size: 1.3em;
+    font-weight: bold;
+    padding-left: 80px;
+    color: #2f7fd0;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc; }
+  #project .proSubTitle {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    padding-left: 20px;
+    vertical-align: middle;
+    background: url(../img/projection/addicon.png) 0 2px no-repeat;
+    cursor: pointer; }
+    #project .proSubTitle:hover {
+      color: #2f7fd0; }
+  #project .layerList {
+    width: 85%;
+    margin: 20px auto;
+    border: 1px solid #ccc; }
+    #project .layerList th {
+      font-weight: bold; }
+    #project .layerList tr {
+      border: 1px solid #ccc; }
+    #project .layerList th, #project .layerList td {
+      text-align: center;
+      line-height: 3em; }
+    #project .layerList td:last-child {
+      opacity: 0;
+      background: url(../img/projection/delete.png) 5px 13px no-repeat; }
+    #project .layerList tr:hover {
+      background-color: #e6e6e6; }
+      #project .layerList tr:hover td:last-child {
+        opacity: 1;
+        cursor: pointer; }
+
+#task {
+  width: 1080px;
+  height: auto;
+  min-height: 800px;
+  margin: 20px auto;
+  border: 1px solid #efefef;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  /*Σ╗╗σèíΦÅ£σìòσ╝Çσºï*/
+  /*Σ╗╗σèíΦÅ£σìòτ╗ôµ¥ƒ*/
+  /*Σ╗╗σèíσêùΦí¿σ╝Çσºï*/
+  /*Σ╗╗σèíσêùΦí¿τ╗ôµ¥ƒ*/ }
+  #task .topinfo {
+    width: 90%;
+    margin: 10px auto;
+    height: 90px;
+    border-bottom: 2px solid #2f7fd0; }
+    #task .topinfo h1 {
+      float: left;
+      font-size: 40px;
+      line-height: 100px; }
+    #task .topinfo .rightinfo {
+      float: right;
+      width: 200px;
+      font-size: 20px;
+      color: #2f7fd0;
+      padding-top: 17px;
+      text-align: center; }
+      #task .topinfo .rightinfo .num {
+        float: left;
+        padding-right: 20px;
+        border-right: 1px solid #2f7fd0; }
+      #task .topinfo .rightinfo .people {
+        padding-left: 20px;
+        float: left; }
+  #task .taskmenu {
+    width: 1000px;
+    margin: 0 auto;
+    height: 50px; }
+    #task .taskmenu .taskinfo {
+      float: left;
+      font-size: 20px;
+      color: #5999d9; }
+      #task .taskmenu .taskinfo .untasked {
+        padding: 0 10px;
+        border-right: 1px solid #2f7fd0;
+        cursor: pointer; }
+        #task .taskmenu .taskinfo .untasked:hover {
+          color: #2666a6; }
+      #task .taskmenu .taskinfo .tasked {
+        padding-right: 10px;
+        cursor: pointer; }
+        #task .taskmenu .taskinfo .tasked:hover {
+          color: #2666a6; }
+    #task .taskmenu .addtask {
+      float: left;
+      margin: 5px 10px 0 20px;
+      cursor: pointer; }
+      #task .taskmenu .addtask .content {
+        font-size: 14px;
+        padding: 5px 5px 5px 24px;
+        border: 1px solid #ccc;
+        color: #ccc;
+        text-align: left;
+        border-radius: 5px;
+        vertical-align: bottom;
+        background: url(../img/task/add.png) 5px 6px no-repeat; }
+        #task .taskmenu .addtask .content:hover {
+          border-color: #2666a6;
+          color: #2666a6;
+          background: url(../img/task/add-1.png) 5px 6px no-repeat; }
+  #task .tasklist {
+    width: 1000px;
+    margin: 0 auto; }
+    #task .tasklist .onelist {
+      position: relative;
+      margin-left: -20px;
+      margin-bottom: 6px; }
+      #task .tasklist .onelist:hover .popup {
+        display: block; }
+      #task .tasklist .onelist input {
+        width: 20px;
+        height: 20px;
+        vertical-align: bottom;
+        cursor: pointer; }
+      #task .tasklist .onelist label {
+        font-size: 17px;
+        margin-left: 5px;
+        vertical-align: middle;
+        cursor: pointer; }
+        #task .tasklist .onelist label:hover {
+          color: #2e80d0; }
+      #task .tasklist .onelist .append {
+        display: inline-block;
+        height: 20px;
+        padding: 0 10px;
+        margin: 0 5px;
+        background-color: #e5e5e5;
+        color: #99979a;
+        border-radius: 7px;
+        vertical-align: middle;
+        font-size: 13px;
+        cursor: pointer; }
+        #task .tasklist .onelist .append:hover {
+          color: #4c4b4d; }
+      #task .tasklist .onelist .popup {
+        width: 80px;
+        height: 24px;
+        position: absolute;
+        top: 0;
+        left: -80px;
+        background-color: #fff;
+        border: 1px #cccbcc;
+        border-style: solid none solid solid;
+        border-radius: 5px 0 0 5px;
+        display: none; }
+        #task .tasklist .onelist .popup div {
+          width: 20px;
+          height: 20px;
+          margin-left: 5px;
+          float: left;
+          cursor: pointer; }
+        #task .tasklist .onelist .popup .delete {
+          background: url(../img/myself/todo-actions-icon.png) 0 5px no-repeat; }
+          #task .tasklist .onelist .popup .delete:hover {
+            background: url(../img/myself/todo-actions-icon.png) -29px 5px no-repeat; }
+        #task .tasklist .onelist .popup .edit {
+          background: url(../img/myself/todo-actions-icon.png) 0 -25px no-repeat; }
+          #task .tasklist .onelist .popup .edit:hover {
+            background: url(../img/myself/todo-actions-icon.png) -29px -25px no-repeat; }
+        #task .tasklist .onelist .popup .start {
+          background: url(../img/myself/todo-actions-icon.png) 0 -55px no-repeat; }
+          #task .tasklist .onelist .popup .start:hover {
+            background: url(../img/myself/todo-actions-icon.png) -29px -55px no-repeat; }
+
+#map .toolBar {
+  width: 100%;
+  height: 40px;
+  border-bottom: 1px #ccc solid;
+  font-size: 14px; }
+  #map .toolBar .tools {
+    height: 30px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: left; }
+  #map .toolBar ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 5px 10px; }
+  #map .toolBar li {
+    display: inline-block;
+    cursor: pointer; }
+  #map .toolBar .toolOne {
+    width: 100px; }
+  #map .toolBar .toolScan {
+    width: 180px;
+    border-left: 1px #ccc solid;
+    border-right: 1px #ccc solid; }
+  #map .toolBar .toolChoose {
+    width: 300px; }
+    #map .toolBar .toolChoose ul {
+      margin: 2px 0 0 0;
+      padding: 0; }
+    #map .toolBar .toolChoose li {
+      background: #d0eafa;
+      line-height: 16px;
+      padding: 0px 10px;
+      border-radius: 3px;
+      height: 25px;
+      position: relative;
+      width: 100px;
+      border: 1px solid #d0eafa; }
+      #map .toolBar .toolChoose li img {
+        position: absolute;
+        top: 5px; }
+      #map .toolBar .toolChoose li span {
+        position: absolute;
+        top: 5px;
+        left: 30px; }
+      #map .toolBar .toolChoose li:hover {
+        border: 1px solid #2f7fd0; }
+#map .Layers {
+  width: 230px;
+  float: left;
+  height: 100%;
+  border-right: 1px solid #ccc; }
+  #map .Layers .headline {
+    background: #f1f2f3;
+    height: 30px;
+    font-size: 1.3em;
+    color: #2f7fd0;
+    line-height: 30px;
+    padding-left: 20px; }
+  #map .Layers .taskLayers {
+    height: 280px; }
+    #map .Layers .taskLayers .layer {
+      padding: 20px 20px 10px 20px; }
+    #map .Layers .taskLayers ul {
+      padding: 0 40px; }
+    #map .Layers .taskLayers .symbol {
+      padding: 5px 20px;
+      cursor: pointer; }
+  #map .Layers .taskDesc .taskDescContent {
+    padding: 20px; }
+  #map .Layers .taskPp .taskPpContent {
+    position: relative;
+    margin: 10px 20px; }
+  #map .Layers .taskPp select {
+    width: 200px;
+    height: 25px;
+    border: 1px solid #ccc; }
+  #map .Layers .taskDate .taskDateContent {
+    position: relative;
+    margin: 10px 20px; }
+  #map .Layers .taskDate input {
+    width: 200px;
+    height: 25px;
+    border: 1px solid #ccc; }
+  #map .Layers .sureButton {
+    display: block;
+    width: 80px;
+    margin: 10px auto;
+    line-height: 30px;
+    font-size: 1.2em;
+    color: #fff;
+    background: #2f7fd0;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer; }
+#map .mapContent {
+  width: 55%;
+  height: 80%;
+  margin-left: 230px; }
+#map .taskList {
+  width: 300px;
+  position: absolute;
+  top: 130px;
+  right: 0;
+  border-left: 1px solid #ccc;
+  height: 82%; }
+  #map .taskList .taskListHead {
+    margin-top: 20px;
+    height: 30px;
+    border-bottom: 1px solid #ccc; }
+    #map .taskList .taskListHead ul {
+      position: absolute;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around; }
+      #map .taskList .taskListHead ul li {
+        display: inline-block;
+        width: 40%;
+        text-align: center;
+        line-height: 29px;
+        cursor: pointer; }
+      #map .taskList .taskListHead ul .selectedTab {
+        color: #2f7fd0;
+        border-top: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #fff; }
+  #map .taskList .list {
+    margin: 10px; }
+    #map .taskList .list .listContent {
+      margin: 20px 0; }
+      #map .taskList .list .listContent li {
+        line-height: 16px;
+        padding-left: 5px; }
+        #map .taskList .list .listContent li span {
+          padding-left: 5px; }
+      #map .taskList .list .listContent li + li {
+        padding-top: 5px; }
+    #map .taskList .list .line {
+      width: 90%;
+      margin: auto;
+      border-bottom: 1px solid #ccc; }
+    #map .taskList .list table, #map .taskList .list td, #map .taskList .list th {
+      border: 1px solid #ccc;
+      text-align: center; }
+    #map .taskList .list table {
+      width: 90%;
+      margin: 10px auto;
+      text-align: center;
+      line-height: 30px; }
+    #map .taskList .list .subTitle {
+      padding: 10px;
+      color: #2f7fd0; }
+      #map .taskList .list .subTitle span {
+        color: red; }
+
+#taskdetail .detailPage {
+  width: 1080px;
+  height: auto;
+  min-height: 800px;
+  margin: 20px auto;
+  border: 1px solid #dbdfd6;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+  background: white;
+  opacity: 1;
+  transform: none;
+  transform-origin: 50% 0px 0px; }
+#taskdetail .detailSec {
+  margin: 0px 50px 40px 50px;
+  min-height: 500px; }
+#taskdetail .taskTopic {
+  height: 100px;
+  border-bottom: 1px solid #dbdfd6;
+  padding-top: 20px; }
+#taskdetail .forPro {
+  font-size: 16px;
+  color: #aeb2aa;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+#taskdetail .forPro:hover {
+  overflow: visible; }
+#taskdetail .forTask {
+  margin-top: 20px;
+  color: #aeb2aa;
+  display: inline-block; }
+#taskdetail .taskName {
+  font-family: SimSun;
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+#taskdetail .taskName:hover {
+  overflow: visible; }
+#taskdetail .taskPer {
+  font-size: 14px; }
+#taskdetail .todo-checkbox {
+  position: relative;
+  top: -3px;
+  display: inline-block;
+  width: 25px;
+  vertical-align: middle; }
+#taskdetail .todo-checkbox label {
+  cursor: pointer;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background: #eee;
+  border: 1px solid #ddd;
+  border-radius: 5px; }
+#taskdetail .todo-checkbox label::after {
+  opacity: 0;
+  content: '';
+  position: absolute;
+  width: 9px;
+  height: 5px;
+  background: transparent;
+  top: 4px;
+  left: 5px;
+  border: 3px solid #333;
+  border-top: none;
+  border-right: none;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  transform: rotate(-45deg); }
+#taskdetail .todo-checkbox label:hover::after {
+  opacity: 0.5; }
+#taskdetail .todo-checkbox input[type=checkbox]:checked + label:after {
+  opacity: 1; }
+#taskdetail .beginTask {
+  display: inline-block;
+  margin-left: 100px; }
+#taskdetail .btn-begin {
+  width: 100px;
+  height: 50px;
+  border: 1px solid #64a8e2;
+  border-radius: 5px;
+  background-color: white;
+  font-size: 16px;
+  font-weight: bold;
+  color: #64a8e2; }
+#taskdetail .btn-begin:hover {
+  background-color: #64a8e2;
+  color: white; }
+#taskdetail .commentStream {
+  margin-top: 30px; }
+#taskdetail .commentUl {
+  position: relative;
+  left: -30px;
+  min-height: 250px; }
+#taskdetail .commentLi {
+  list-style: none; }
+#taskdetail .newEvent, #taskdetail .doneEvent {
+  height: 40px;
+  margin-top: 10px; }
+#taskdetail .tComment {
+  height: 70px;
+  margin-top: 30px; }
+#taskdetail .tComment * {
+  vertical-align: middle; }
+#taskdetail .eventLogo {
+  display: inline-block; }
+#taskdetail .newEvent span, #taskdetail .doneEvent span {
+  position: relative;
+  top: -10px;
+  color: #aeb2aa;
+  font-size: 16px; }
+#taskdetail .taskTime {
+  margin-left: 20px; }
+#taskdetail .taskPer {
+  margin-left: 15px;
+  font-weight: bold; }
+#taskdetail .taskAction {
+  margin-left: 8px; }
+#taskdetail .perLogo {
+  display: inline-block; }
+#taskdetail .comDetail {
+  display: inline-block;
+  margin-left: 20px; }
+#taskdetail .comTime {
+  color: #aeb2aa;
+  font-size: 14px;
+  margin-left: 6px; }
+#taskdetail .comPer {
+  font-weight: bold; }
+#taskdetail .comContent {
+  margin-top: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis; }
+#taskdetail .comContent:hover {
+  overflow: visible; }
+#taskdetail .commentForm {
+  margin-top: 30px; }
+#taskdetail .commentForm * {
+  vertical-align: middle; }
+#taskdetail .comText {
+  display: inline-block; }
+#taskdetail .comText textarea {
+  margin-left: 20px;
+  width: 700px;
+  height: 60px;
+  border-radius: 5px;
+  border: 1px solid #64a8e2; }
+#taskdetail .comBtn {
+  display: inline-block;
+  margin-left: 30px; }
+#taskdetail .comBtn button {
+  width: 100px;
+  height: 50px;
+  padding: 5px;
+  background-color: #64a8e2;
+  border: 1px solid #64a8e2;
+  color: white;
+  border-radius: 5px;
+  font-size: 16px; }
+#taskdetail .comBtn button:hover {
+  background-color: #79b0ed; }
+
+#myself {
+  width: 1080px;
+  height: auto;
+  min-height: 800px;
+  border: 1px solid #efefef;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+  /*Σ╕¬Σ║║Σ┐íµü»σ╝Çσºï*/
+  /*Σ╕¬Σ║║Σ┐íµü»τ╗ôµ¥ƒ*/
+  /*Σ╗╗σèíΦÅ£σìòσ╝Çσºï*/
+  /*Σ╗╗σèíΦÅ£σìòτ╗ôµ¥ƒ*/
+  /*ΘÇëµï⌐Θí╣τ¢«σ╝Çσºï*/
+  /*ΘÇëµï⌐Θí╣τ¢«τ╗ôµ¥ƒ*/
+  /*Σ╗╗σèíσåàσ«╣σ╝Çσºï*/
+  /*Σ╗╗σèíσåàσ«╣τ╗ôµ¥ƒ*/ }
+  #myself .topinfo {
+    width: 100%;
+    height: 130px;
+    padding: 15px 0 0 30px; }
+    #myself .topinfo .icon {
+      width: 100px;
+      height: 100px;
+      float: left; }
+      #myself .topinfo .icon img {
+        width: 100%;
+        height: 100%; }
+    #myself .topinfo .textinfo {
+      padding: 0 0 0 15px;
+      float: left; }
+      #myself .topinfo .textinfo h1 {
+        font-weight: bold;
+        font-size: 30px; }
+      #myself .topinfo .textinfo p {
+        color: #99979a;
+        font-size: 15px; }
+        #myself .topinfo .textinfo p span {
+          display: inline-block;
+          margin-left: 10px;
+          height: 18px;
+          width: 25px;
+          cursor: pointer;
+          background: url(../img/myself/todo-actions-icon.png) 0 -25px no-repeat; }
+          #myself .topinfo .textinfo p span:hover {
+            background: url(../img/myself/todo-actions-icon.png) -30px -25px no-repeat; }
+  #myself .split {
+    border-top: 1.5px solid #efefef;
+    border-bottom: 1.5px solid #efefef; }
+    #myself .split p {
+      margin: 10px 0 10px 30px;
+      font-size: 15px;
+      font-weight: bold;
+      color: #2e80d0; }
+  #myself .choose {
+    float: right;
+    margin: 30px; }
+  #myself .newtask .title .icon {
+    background: url(../img/myself/newtask.png) 0 0 no-repeat; }
+  #myself .today .title .icon {
+    background: url(../img/myself/today.png) 0 0 no-repeat; }
+  #myself .next .title .icon {
+    background: url(../img/myself/next.png) 0 0 no-repeat; }
+  #myself .after .title .icon {
+    background: url(../img/myself/after.png) 0 0 no-repeat; }
+  #myself .taskcontent {
+    margin: 30px;
+    /*Σ╗╗σèíσåàσ«╣σ╝Çσºï*/
+    /*Σ╗╗σèíσåàσ«╣τ╗ôµ¥ƒ*/ }
+    #myself .taskcontent .title {
+      height: 25px;
+      margin: 5px 0; }
+      #myself .taskcontent .title .icon {
+        height: 25px;
+        width: 25px;
+        float: left; }
+      #myself .taskcontent .title .describe {
+        line-height: 20px;
+        padding-left: 5px;
+        color: #99979a;
+        font-size: 15px; }
+    #myself .taskcontent .content p {
+      color: #bfbec0;
+      font-size: 15px; }
+    #myself .taskcontent .content .nodisplay {
+      display: none; }
+    #myself .taskcontent .content .tasklist .onelist {
+      position: relative;
+      margin-left: -20px;
+      margin-bottom: 6px; }
+      #myself .taskcontent .content .tasklist .onelist:hover .popup {
+        display: block; }
+      #myself .taskcontent .content .tasklist .onelist input {
+        width: 20px;
+        height: 20px;
+        vertical-align: bottom;
+        cursor: pointer; }
+      #myself .taskcontent .content .tasklist .onelist label {
+        font-size: 17px;
+        margin-left: 5px;
+        vertical-align: middle;
+        cursor: pointer; }
+        #myself .taskcontent .content .tasklist .onelist label:hover {
+          color: #2e80d0; }
+      #myself .taskcontent .content .tasklist .onelist .append {
+        display: inline-block;
+        height: 20px;
+        padding: 0 10px;
+        margin: 0 5px;
+        background-color: #e5e5e5;
+        color: #99979a;
+        border-radius: 7px;
+        vertical-align: middle;
+        font-size: 13px;
+        cursor: pointer; }
+        #myself .taskcontent .content .tasklist .onelist .append:hover {
+          color: #4c4b4d; }
+      #myself .taskcontent .content .tasklist .onelist .popup {
+        width: 80px;
+        height: 24px;
+        position: absolute;
+        top: 0;
+        left: -80px;
+        background-color: #fff;
+        border: 1px #cccbcc;
+        border-style: solid none solid solid;
+        border-radius: 5px 0 0 5px;
+        display: none; }
+        #myself .taskcontent .content .tasklist .onelist .popup div {
+          width: 20px;
+          height: 20px;
+          margin-left: 5px;
+          float: left;
+          cursor: pointer; }
+        #myself .taskcontent .content .tasklist .onelist .popup .delete {
+          background: url(../img/myself/todo-actions-icon.png) 0 5px no-repeat; }
+          #myself .taskcontent .content .tasklist .onelist .popup .delete:hover {
+            background: url(../img/myself/todo-actions-icon.png) -29px 5px no-repeat; }
+        #myself .taskcontent .content .tasklist .onelist .popup .edit {
+          background: url(../img/myself/todo-actions-icon.png) 0 -25px no-repeat; }
+          #myself .taskcontent .content .tasklist .onelist .popup .edit:hover {
+            background: url(../img/myself/todo-actions-icon.png) -29px -25px no-repeat; }
+        #myself .taskcontent .content .tasklist .onelist .popup .start {
+          background: url(../img/myself/todo-actions-icon.png) 0 -55px no-repeat; }
+          #myself .taskcontent .content .tasklist .onelist .popup .start:hover {
+            background: url(../img/myself/todo-actions-icon.png) -29px -55px no-repeat; }
+  #myself .overtask {
+    margin-left: 30px;
+    color: #2e80d0; }
+    #myself .overtask a {
+      text-decoration: none; }
+
+#setting {
+  width: 1080px;
+  height: auto;
+  min-height: 800px;
+  border: 1px solid #efefef;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.15); }
+  #setting .title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #2e80d0;
+    margin: 30px; }
+  #setting .topinfo {
+    margin-left: 30px;
+    width: 100%;
+    height: 100px; }
+    #setting .topinfo .icon {
+      float: left; }
+      #setting .topinfo .icon img {
+        width: 80px;
+        height: 80px; }
+    #setting .topinfo .textinfo {
+      float: left;
+      margin-top: 15px;
+      margin-left: 10px; }
+      #setting .topinfo .textinfo h1 {
+        font-size: 15px;
+        color: #6ca6de; }
+      #setting .topinfo .textinfo p {
+        margin-top: 5px;
+        color: #99979a; }
+  #setting .form {
+    margin-left: 30px; }
+    #setting .form label {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 18px;
+      margin-right: 10px; }
+    #setting .form label[for="email"] {
+      margin-left: 20px; }
+    #setting .form label[for="name"] {
+      margin-left: 20px; }
+    #setting .form input[type='text'] {
+      width: 200px;
+      height: 35px;
+      border: 1px solid #99979a;
+      border-radius: 5px;
+      padding-left: 10px; }
+      #setting .form input[type='text']:focus {
+        outline: none;
+        border: 1px solid #2e80d0;
+        box-shadow: 0 0 5px #2e80d0; }
+    #setting .form input[type="submit"] {
+      border: none;
+      margin: 20px 0 0 66px;
+      background-color: #2e80d0;
+      color: #fff;
+      cursor: pointer;
+      padding: 3px 10px;
+      border-radius: 5px;
+      outline: none;
+      font-size: 18px; }
+
+#active {
+  width: 1080px;
+  margin: 20px auto;
+  border: 1px solid #dbdfd6;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.15);
+  background: white;
+  /*.event-actor,.event-action,.event-text{position:relative;top: -10px; }*/ }
+  #active .dynamicContainer {
+    margin: 0px 20px 40px 50px;
+    min-height: 500px; }
+  #active .dynamic-filter {
+    margin-top: 20px; }
+  #active #filterSet {
+    cursor: pointer;
+    color: #aeb2aa; }
+    #active #filterSet:hover {
+      color: #64a8e2; }
+  #active .dynamic-section {
+    margin-top: 30px; }
+  #active .dynamicUl {
+    position: relative;
+    left: -40px; }
+  #active li {
+    list-style: none; }
+  #active .dynamic-title-day {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #5999d9;
+    border: 4px solid #82b2e3;
+    border-radius: 50%;
+    text-align: center; }
+  #active .dynamic-title-date {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    color: #769bb3;
+    border: 4px solid #d2e8ea;
+    border-radius: 50%;
+    text-align: center; }
+  #active .event-date {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 6px 0 0 0; }
+  #active .event-day {
+    display: block;
+    font-size: 12px;
+    color: #555; }
+  #active .dynamic-project {
+    position: relative;
+    top: -30px;
+    left: 18px; }
+  #active .event-title {
+    position: relative; }
+  #active .titleLine {
+    display: inline-block;
+    height: 10px;
+    width: 950px;
+    margin-left: 45px;
+    border-top: 1px solid #64a8e2; }
+  #active .event-ProName {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+    color: #aeb2aa;
+    padding-left: 10px;
+    right: 10px;
+    top: -10px;
+    background-color: #fff; }
+  #active .event-desc {
+    width: 700px;
+    height: 70px;
+    margin-left: 28px;
+    display: inline-block;
+    padding-top: 10px;
+    padding-left: 20px; }
+  #active .event-desc * {
+    vertical-align: middle;
+    font-size: 14px; }
+  #active .perLogo {
+    display: inline-block; }
+  #active .event-actor {
+    margin-left: 20px;
+    font-weight: bold; }
+  #active .event-action {
+    margin-left: 10px; }
+  #active .event-text {
+    margin-left: 6px; }
+  #active .dynamic-day {
+    margin-top: 20px; }
+  #active .dynamic-content {
+    margin-bottom: 20px; }
+  #active #filterBd {
+    display: none; }
+  #active .personnelList {
+    border: 1px solid #cccccc;
+    font-size: 16px;
+    padding: 5px 0px;
+    position: absolute;
+    top: 50px;
+    left: 210px;
+    width: 120px;
+    height: 150px;
+    overflow-y: scroll;
+    margin: 5px 0px 0px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); }
+  #active .personnelList a {
+    display: block;
+    padding: 3px 12px;
+    color: #333333;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap; }
+  #active .personnelList li {
+    list-style: none;
+    height: 30px; }
+  #active .personnelList a:hover {
+    background-color: #eeeeee; }
+
+#login {
+  display: block; }
+  #login input {
+    outline: none; }
+  #login .LoginPage {
+    font-size: 16px;
+    font-family: "Helvetica Neue", Helvetica, Arial; }
+  #login .LoginPart {
+    width: 40%;
+    margin-top: 10%;
+    margin-left: 30%; }
+  #login .loginTitle {
+    font-family: arial, sans-serif;
+    color: #64a8e2;
+    font-size: 2em;
+    text-align: center; }
+  #login .LoginPage .LoginPart .bd {
+    width: 380px;
+    margin: 0px auto;
+    text-align: center; }
+  #login .LoginPage .LoginPart .bd .form {
+    margin-top: 30px; }
+  #login .Login-title {
+    padding: 0px 0px 10px;
+    font-size: 15px; }
+  #login .Login-title span {
+    margin: 0px 10px;
+    color: #888877;
+    font-size: 13px; }
+  #login .Login-title a:hover {
+    opacity: 0.8;
+    text-decoration: none; }
+  #login .link-Login, #login .link-Register {
+    color: #555555;
+    text-decoration: none;
+    cursor: pointer; }
+  #login .link-login:hover {
+    text-decoration: none; }
+  #login .link-Register:hover {
+    cursor: pointer;
+    text-decoration: none; }
+  #login .Login-section {
+    position: relative;
+    margin-top: 15px;
+    padding: 36px 30px 15px;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 4px; }
+  #login .Login-arrow {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    top: -24px;
+    left: 116px; }
+  #login .Login-arrow .arrow {
+    font-size: 0px;
+    height: 0px;
+    width: 0px;
+    border-style: solid;
+    border-width: 12px;
+    position: absolute;
+    left: 0px;
+    top: 0px; }
+  #login .Login-arrow .arrow-basic {
+    border-color: transparent transparent white;
+    top: 1px; }
+  #login .Login-arrow .arrow-border {
+    border-color: transparent transparent #c3c3c3;
+    top: 0px; }
+  #login .Login-arrow .arrow-shadow-0 {
+    border-color: transparent transparent rgba(0, 0, 0, 0.04);
+    top: -1px; }
+  #login .Login-arrow .arrow-shadow-1 {
+    border-color: transparent transparent rgba(0, 0, 0, 0.02);
+    top: -2px; }
+  #login .form-item .form-field input {
+    width: 300px;
+    height: 30px;
+    padding: 6px 8px;
+    border: 1px solid #aaaaaa;
+    font-size: 16px;
+    border-radius: 4px; }
+  #login .form .form-item .form-field {
+    margin-top: 20px; }
+  #login .form-field input:hover, #login .form-field input:focus {
+    border-color: #64a8e2; }
+  #login .form .form-buttons {
+    margin: 30px 0px 20px; }
+  #login .desc {
+    margin-top: 5px;
+    padding: 10px 0;
+    color: #999999;
+    font-size: 14px;
+    cursor: pointer; }
+  #login .desc a {
+    color: #999999;
+    text-decoration: none; }
+  #login .left {
+    float: left; }
+  #login .right {
+    float: right; }
+  #login .btn {
+    padding: 6px 10px;
+    margin: 0px 10px 0px 0px;
+    width: 300px;
+    height: 40px;
+    border: 1px solid transparent;
+    color: white;
+    background-color: #64a8e2;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    background-clip: padding-box;
+    -moz-user-select: none; }
+  #login .forgot-pw a {
+    text-decoration: none; }
+
+#register {
+  display: none; }
+  #register .RegPage {
+    font-size: 16px;
+    font-family: "Helvetica Neue", Helvetica, Arial; }
+  #register .RegPart {
+    width: 40%;
+    margin-top: 10%;
+    margin-left: 30%; }
+  #register .RegTitle {
+    font-family: arial, sans-serif;
+    color: #64a8e2;
+    font-size: 2em;
+    text-align: center; }
+  #register a {
+    text-decoration: none; }
+  #register .bd {
+    width: 380px;
+    margin: 0px auto;
+    text-align: center; }
+  #register .RegPage .RegPart .bd .form {
+    margin-top: 30px; }
+  #register .form .form-item .form-field {
+    margin-top: 25px; }
+  #register .form .form-buttons {
+    margin: 30px 0px 20px; }
+  #register .form-field input {
+    width: 300px;
+    height: 30px;
+    padding: 6px 8px;
+    border: 1px solid #aaaaaa;
+    font-size: 16px;
+    border-radius: 4px; }
+  #register .form-field input:hover, #register .form-field input:focus {
+    border-color: #64a8e2; }
+  #register .agree {
+    font-size: 14px;
+    margin-bottom: 12px; }
+  #register .agree a {
+    color: #64a8e2; }
+  #register .desc {
+    padding-top: 15px;
+    color: #999999;
+    font-size: 14px;
+    cursor: pointer; }
+  #register .desc a {
+    color: #999999; }
+  #register .left {
+    float: left; }
+  #register .right {
+    float: right; }
+  #register .btn {
+    padding: 6px 10px;
+    margin: 10px 10px 0px 0px;
+    width: 300px;
+    height: 40px;
+    border: 1px solid transparent;
+    color: white;
+    background-color: #64a8e2;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    background-clip: padding-box;
+    -moz-user-select: none; }
+
+#findpwd {
+  display: none; }
+  #findpwd input {
+    outline: none; }
+  #findpwd .FindPage {
+    font-size: 16px;
+    font-family: "Helvetica Neue", Helvetica, Arial; }
+  #findpwd .FindPart {
+    width: 600px;
+    overflow: hidden;
+    margin: 80px auto 0px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5); }
+  #findpwd .FindPart .hd {
+    background: #79b0ed none repeat scroll 0% 0%;
+    color: white;
+    line-height: 60px;
+    height: 80px;
+    padding: 0px 30px; }
+  #findpwd .FindPart .hd .logo {
+    float: left;
+    width: 200px;
+    font-size: 2em;
+    padding-top: 20px;
+    font-weight: bold; }
+  #findpwd .FindPart .hd .title {
+    display: block;
+    font-size: 20px;
+    line-height: 20px;
+    padding: 40px 0px 17px; }
+  #findpwd .FindPart .bd {
+    background: white none repeat scroll 0% 0%;
+    padding: 30px;
+    text-align: center; }
+  #findpwd .form .form-item .form-label {
+    font-size: 16px;
+    color: #555555;
+    margin: 0px 0px 0px 2px; }
+  #findpwd .form .form-item .form-field {
+    margin-top: 15px; }
+  #findpwd .form .form-item input {
+    width: 280px;
+    height: 30px;
+    padding: 6px 8px;
+    border: 1px solid #aaaaaa;
+    font-size: 18px;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1) inset; }
+    #findpwd .form .form-item input:hover, #findpwd .form .form-item input:focus {
+      border-color: #64a8e2; }
+  #findpwd .btn {
+    padding: 6px 10px;
+    margin: 20px 10px 0px 0px;
+    width: 280px;
+    height: 40px;
+    border: 1px solid transparent;
+    color: white;
+    background-color: #64a8e2;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    border-radius: 5px;
+    cursor: pointer;
+    background-clip: padding-box;
+    -moz-user-select: none; }
+
+html {
+  height: 100%; }
+
+body {
+  width: 100%;
+  min-width: 1000px;
+  font-size: 14px;
+  height: auto;
+  position: relative; }
+
+*[ng-click] {
+  cursor: pointer; }
+
+.show {
+  display: block; }
+
+/*# sourceMappingURL=index.css.map */

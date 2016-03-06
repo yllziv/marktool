@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--js库开始-->
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>     <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
+    <!--js库结束-->
+
+    <!--css样式开始-->
+    <link type="text/css" rel="stylesheet" href="../css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="../css/index.css" />
+    <!--css样式结束-->
+</head>
+<div id="taskdetail">
+    <div class="detailPage">
+        <div class="detailSec">
+            <div class="taskTopic">
+                <div class="forPro"><span>项目：武汉市道路标注</span></div>
+                <div class="forTask">
+                    <div class="todo-checkbox">
+                        <input  type="checkbox" id="donechecked">
+                        <label for="donechecked"></label>
+                    </div>
+                    <span class="taskName">事故标注报告指导思想、目标等部分文档撰写</span>
+                    <span class="taskPer">（樊亚新，1月24日）</span>
+                </div>
+                <div class="beginTask">
+                    <button id="" name="开始任务" class="btn-begin">开始任务</button>
+                </div>
+            </div>
+            <div class="commentStream">
+                <ul class="commentUl">
+                    <li class="commentLi">
+                        <div class="newEvent">
+                            <div class="eventLogo">
+                                <img src="../img/taskdetail/NewLogo.png">
+                            </div>
+                            <span class="taskTime">01-22 19:28</span>
+                            <span class="taskPer">刘凌佳</span>
+                            <span class="taskAction">创建了任务</span>
+                        </div>
+                    </li>
+                    <li class="commentLi">
+                        <div class="doneEvent">
+                            <div class="eventLogo">
+                                <img src="../img/taskdetail/DoneLogo.png">
+                            </div>
+                            <span class="taskTime">01-23 21:30</span>
+                            <span class="taskPer">刘凌佳</span>
+                            <span class="taskAction">完成了任务</span>
+                        </div>
+                    </li>
+                    <li class="commentLi">
+                        <div class="tComment">
+                            <div class="perLogo">
+                                <img src="../img/taskdetail/头像1.png">
+                            </div>
+                            <div class="comDetail">
+                                <div class="comInfo">
+                                    <span class="comPer">呙维</span>
+                                    <span class="comTime">1月24日</span>
+                                </div>
+                                <div class="comContent">
+                                    <span class="contentInfo">未达到编写要求</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="commentLi">
+                        <div class="doneEvent">
+                            <div class="eventLogo">
+                                <img src="../img/taskdetail/DoneLogo.png">
+                            </div>
+                            <span class="taskTime">01-24 19:06</span>
+                            <span class="taskPer">樊亚新</span>
+                            <span class="taskAction">完成了任务</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="commentForm">
+                <form>
+                    <div class="perLogo">
+                        <img src="../img/taskdetail/头像3.png">
+                    </div>
+                    <div class="comText">
+                        <textarea name="你的评论" placeholder="点击发表评论"></textarea>
+                    </div>
+                    <div class="comBtn">
+                        <button type="submit" name="发表评论">发表评论</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

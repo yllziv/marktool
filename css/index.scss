@@ -1,0 +1,35 @@
+@import './components/nav';
+@import 'projection';
+@import 'task';
+@import 'map';
+@import 'taskdetail';
+@import 'myself';
+@import 'setting';
+@import 'active';
+@import 'login';
+@import 'register';
+@import 'findpwd';
+
+
+html {
+  height: 100%;
+}
+body {
+  width: 100%;
+  min-width: 1000px;
+  font-size: 14px;
+  height: auto;
+  position: relative;
+}
+*[ng-click] {
+  cursor:pointer;
+}
+
+.show {
+  display: block;
+}
+
+
+
+
+

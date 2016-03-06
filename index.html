@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--js库开始-->
+    <script type="text/javascript" src="./bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="./bower_components/underscore/underscore.js"></script>
+    <!--js库结束-->
+
+    <!--css样式开始-->
+    <link type="text/css" rel="stylesheet" href="./css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="./css/index.css" />
+    <!--css样式结束-->
+</head>
+ <!--登陆页面开始-->
+<div id="login">
+    <div class="LoginPage">
+        <div class="LoginPart">
+            <div class="hd">
+                <h1 class="loginTitle">
+                    协同标注工具
+                </h1>
+            </div>
+
+            <div class="bd">
+                <form class="form" name="loginForm">
+                    <div class="Login-title">
+                        <a class="link-Login">账户登录</a>
+                        <span>或</span>
+                        <a class="link-Register">账户注册</a>
+                    </div>
+
+                    <div class="Login-section">
+                        <div class="Login-arrow">
+                            <i class="arrow arrow-shadow-1"></i>
+                            <i class="arrow arrow-shadow-0"></i>
+                            <i class="arrow arrow-border"></i>
+                            <i class="arrow arrow-basic"></i>
+                        </div>
+
+                        <div class="form-item">
+                            <div class="form-field">
+                                <input name="name" id="loginbtn" placeholder="登录账号" type="text" required>
+                            </div>
+                        </div>
+
+                        <div class="form-item">
+                            <div class="form-field">
+                                <input name="password" placeholder="密码" type="password" minlength="3" maxlength="18" required >
+                            </div>
+                            <div class="desc">
+                                <p class="left">
+                                    <label for="cb-remember" ><input name="remember_me" id="cb-remember" type="checkbox">
+                                        下次自动登录</label>
+                                </p>
+
+                                <p class="right">
+                                    <span class="forgot-pw"><a>忘记密码了？</a></span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-item form-buttons">
+                            <button  type="" id="btn-login" class="btn">
+                                登录
+                            </button>
+                            <div class="desc rightnowRegister">
+                                没有账户？<a>立即注册 →</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--登录页面结束-->
+
+<!--注册页面开始-->
+<div id="register">
+    <div class="RegPage">
+        <div class="RegPart">
+            <div class="hd">
+                <h1 class="RegTitle">
+                    协同标注工具
+                </h1>
+            </div>
+            <div class="bd">
+                <form class="form" id="Regform" action="" method="post" name="registerForm">
+                    <div class="form-item">
+                        <div class="form-field">
+                            <input value="" class="nickname" name="nickname" placeholder="你的名字" type="text" minlength="3" maxlength="10">
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="form-field">
+                            <input class="password" name="password" placeholder="密码"  type="password" minlength="3" maxlength="16">
+                        </div>
+                    </div>
+
+                    <div class="form-item form-buttons">
+                        <p class="agree">点击注册表示你已阅读并同意<a href="#" target="_top">《服务条款》</a></p>
+                        <button id="btn-register" class="btn">注册</button>
+                        <div class="desc">
+                            <p>
+                                已有账户？<span><a>直接登录 →</a></span>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!--注册页面结束-->
+
+<!--找回密码页面开始-->
+<div id="findpwd">
+    <div class="FindPage">
+        <div class="FindPart">
+            <div class="hd">
+                <h1 class="logo">协同标注工具</h1>
+                <span class="title">重设密码</span>
+            </div>
+
+            <div class="bd">
+                <form class="form" name="FindForm">
+                    <div class="form-item">
+                        <div class="form-field">
+                            <input value="" class="nickname" name="nickname" placeholder="名字" type="text" minlength="3" maxlength="10" required >
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="form-field">
+                            <input class="password" name="password" placeholder="新密码，至少包含 6 位字符"  type="password" minlength="6" maxlength="16">
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="form-field">
+                            <input class="password" name="password" placeholder="再次输入密码"  type="password" minlength="6" maxlength="16">
+                        </div>
+                    </div>
+                    <div class="form-item">
+                        <button id="btn-pswreset" class="btn" >确认</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--找回密码页面结束-->
+
+<!--自定义js文件开始-->
+<script type="text/javascript" src="./js/index.js"></script>
+<!--自定义js文件开始-->
+
+</body>
+</html>
