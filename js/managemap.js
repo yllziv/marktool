@@ -114,7 +114,7 @@ DragObj.loadDrag = function() {
         list.addEventListener('drop',DragObj.handleDrop,false);
     });
 
-    // 每个目标有自己的dragover事件
+    // 每个目标 有自己的dragover事件
     DragObj.canEditList.addEventListener('dragover',DragObj.handleCanEditDragOver,false);
     DragObj.cantEditList.addEventListener('dragover',DragObj.handleCantEditDragOver,false);
 
