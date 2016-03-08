@@ -447,163 +447,453 @@
           #task .tasklist .onelist .popup .start:hover {
             background: url(../img/myself/todo-actions-icon.png) -29px -55px no-repeat; }
 
-#map .toolBar {
+#map {
   width: 100%;
-  height: 40px;
-  border-bottom: 1px #ccc solid;
-  font-size: 14px; }
-  #map .toolBar .tools {
-    height: 30px;
-    margin: 10px 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: left; }
-  #map .toolBar ul {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding: 5px 10px; }
-  #map .toolBar li {
-    display: inline-block;
-    cursor: pointer; }
-  #map .toolBar .toolOne {
-    width: 100px; }
-  #map .toolBar .toolScan {
-    width: 180px;
-    border-left: 1px #ccc solid;
-    border-right: 1px #ccc solid; }
-  #map .toolBar .toolChoose {
-    width: 300px; }
-    #map .toolBar .toolChoose ul {
-      margin: 2px 0 0 0;
-      padding: 0; }
-    #map .toolBar .toolChoose li {
-      background: #d0eafa;
-      line-height: 16px;
-      padding: 0px 10px;
-      border-radius: 3px;
-      height: 25px;
-      position: relative;
-      width: 100px;
-      border: 1px solid #d0eafa; }
-      #map .toolBar .toolChoose li img {
-        position: absolute;
-        top: 5px; }
-      #map .toolBar .toolChoose li span {
-        position: absolute;
-        top: 5px;
-        left: 30px; }
-      #map .toolBar .toolChoose li:hover {
-        border: 1px solid #2f7fd0; }
-#map .Layers {
-  width: 230px;
-  float: left;
   height: 100%;
-  border-right: 1px solid #ccc; }
-  #map .Layers .headline {
-    background: #f1f2f3;
-    height: 30px;
-    font-size: 1.3em;
-    color: #2f7fd0;
-    line-height: 30px;
-    padding-left: 20px; }
-  #map .Layers .taskLayers {
-    height: 280px; }
-    #map .Layers .taskLayers .layer {
-      padding: 20px 20px 10px 20px; }
-    #map .Layers .taskLayers ul {
-      padding: 0 40px; }
-    #map .Layers .taskLayers .symbol {
-      padding: 5px 20px;
-      cursor: pointer; }
-  #map .Layers .taskDesc .taskDescContent {
-    padding: 20px; }
-  #map .Layers .taskPp .taskPpContent {
-    position: relative;
-    margin: 10px 20px; }
-  #map .Layers .taskPp select {
-    width: 200px;
-    height: 25px;
-    border: 1px solid #ccc; }
-  #map .Layers .taskDate .taskDateContent {
-    position: relative;
-    margin: 10px 20px; }
-  #map .Layers .taskDate input {
-    width: 200px;
-    height: 25px;
-    border: 1px solid #ccc; }
-  #map .Layers .sureButton {
-    display: block;
-    width: 80px;
-    margin: 10px auto;
-    line-height: 30px;
-    font-size: 1.2em;
-    color: #fff;
-    background: #2f7fd0;
-    border-radius: 5px;
-    text-align: center;
-    cursor: pointer; }
-#map .mapContent {
-  width: 55%;
-  height: 80%;
-  margin-left: 230px; }
-#map .taskList {
-  width: 300px;
-  position: absolute;
-  top: 130px;
-  right: 0;
-  border-left: 1px solid #ccc;
-  height: 82%; }
-  #map .taskList .taskListHead {
-    margin-top: 20px;
-    height: 30px;
-    border-bottom: 1px solid #ccc; }
-    #map .taskList .taskListHead ul {
-      position: absolute;
-      width: 100%;
+  min-width: 1080px; }
+  #map .toolBar {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px #ccc solid;
+    font-size: 14px; }
+    #map .toolBar .tools {
+      height: 30px;
+      margin: 10px 0;
       display: flex;
       flex-direction: row;
-      justify-content: space-around; }
-      #map .taskList .taskListHead ul li {
-        display: inline-block;
-        width: 40%;
-        text-align: center;
-        line-height: 29px;
-        cursor: pointer; }
-      #map .taskList .taskListHead ul .selectedTab {
-        color: #2f7fd0;
-        border-top: 1px solid #ccc;
-        border-left: 1px solid #ccc;
-        border-right: 1px solid #ccc;
-        border-bottom: 1px solid #fff; }
-  #map .taskList .list {
-    margin: 10px; }
-    #map .taskList .list .listContent {
-      margin: 20px 0; }
-      #map .taskList .list .listContent li {
+      justify-content: left; }
+    #map .toolBar ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 5px 10px; }
+    #map .toolBar li {
+      display: inline-block;
+      cursor: pointer; }
+    #map .toolBar .toolOne {
+      width: 100px; }
+    #map .toolBar .toolScan {
+      width: 180px;
+      border-left: 1px #ccc solid;
+      border-right: 1px #ccc solid; }
+    #map .toolBar .toolChoose {
+      width: 300px; }
+      #map .toolBar .toolChoose ul {
+        margin: 2px 0 0 0;
+        padding: 0; }
+      #map .toolBar .toolChoose li {
+        background: #d0eafa;
         line-height: 16px;
-        padding-left: 5px; }
-        #map .taskList .list .listContent li span {
-          padding-left: 5px; }
-      #map .taskList .list .listContent li + li {
-        padding-top: 5px; }
-    #map .taskList .list .line {
-      width: 90%;
-      margin: auto;
-      border-bottom: 1px solid #ccc; }
-    #map .taskList .list table, #map .taskList .list td, #map .taskList .list th {
-      border: 1px solid #ccc;
-      text-align: center; }
-    #map .taskList .list table {
-      width: 90%;
+        padding: 0px 10px;
+        border-radius: 3px;
+        height: 25px;
+        position: relative;
+        width: 100px;
+        border: 1px solid #d0eafa; }
+        #map .toolBar .toolChoose li img {
+          position: absolute;
+          top: 5px; }
+        #map .toolBar .toolChoose li span {
+          position: absolute;
+          top: 5px;
+          left: 30px; }
+        #map .toolBar .toolChoose li:hover {
+          border: 1px solid #2f7fd0; }
+  #map .Layers {
+    width: 230px;
+    float: left;
+    height: 0;
+    border-right: 1px solid #ccc; }
+    #map .Layers .headline {
+      background: #f1f2f3;
+      height: 30px;
+      font-size: 1.3em;
+      color: #2f7fd0;
+      line-height: 30px;
+      padding-left: 20px; }
+    #map .Layers .taskLayers {
+      height: 280px; }
+      #map .Layers .taskLayers .layer {
+        padding: 20px 20px 10px 20px; }
+      #map .Layers .taskLayers ul {
+        padding: 0 40px; }
+      #map .Layers .taskLayers .symbol {
+        padding: 5px 20px;
+        cursor: pointer; }
+    #map .Layers .taskDesc .taskDescContent {
+      padding: 20px; }
+    #map .Layers .taskPp .taskPpContent {
+      position: relative;
+      margin: 10px 20px; }
+    #map .Layers .taskPp select {
+      width: 200px;
+      height: 25px;
+      border: 1px solid #ccc; }
+    #map .Layers .taskDate .taskDateContent {
+      position: relative;
+      margin: 10px 20px; }
+    #map .Layers .taskDate input {
+      width: 200px;
+      height: 25px;
+      border: 1px solid #ccc; }
+    #map .Layers .sureButton {
+      display: block;
+      width: 80px;
       margin: 10px auto;
+      line-height: 30px;
+      font-size: 1.2em;
+      color: #fff;
+      background: #2f7fd0;
+      border-radius: 5px;
       text-align: center;
-      line-height: 30px; }
-    #map .taskList .list .subTitle {
-      padding: 10px;
+      cursor: pointer; }
+  #map .taskList {
+    width: 300px;
+    float: right;
+    border-left: 1px solid #ccc;
+    height: 82%; }
+    #map .taskList .taskListHead {
+      margin-top: 20px;
+      height: 30px;
+      border-bottom: 1px solid #ccc; }
+      #map .taskList .taskListHead ul {
+        width: 80%;
+        margin: 0 auto; }
+        #map .taskList .taskListHead ul li {
+          display: inline-block;
+          width: 48%;
+          text-align: center;
+          line-height: 29px;
+          cursor: pointer;
+          border: 1px solid transparent; }
+        #map .taskList .taskListHead ul .clicked {
+          border: 1px solid #ccc;
+          border-bottom: 1px solid #fff; }
+        #map .taskList .taskListHead ul .selectedTab {
+          color: #2f7fd0;
+          border-top: 1px solid #ccc;
+          border-left: 1px solid #ccc;
+          border-right: 1px solid #ccc;
+          border-bottom: 1px solid #fff; }
+    #map .taskList .list {
+      margin: 10px; }
+      #map .taskList .list .listContent {
+        margin: 5px 0;
+        padding: 10px 0;
+        cursor: pointer; }
+        #map .taskList .list .listContent li {
+          line-height: 16px;
+          padding-left: 5px; }
+          #map .taskList .list .listContent li span {
+            padding-left: 5px; }
+        #map .taskList .list .listContent li + li {
+          padding-top: 5px; }
+        #map .taskList .list .listContent:hover {
+          background-color: #ccc; }
+      #map .taskList .list .line {
+        width: 90%;
+        margin: auto;
+        border-bottom: 1px solid #ccc; }
+    #map .taskList .taskTable {
+      height: 500px;
+      overflow-y: auto; }
+    #map .taskList .taskProgress {
+      display: none; }
+      #map .taskList .taskProgress table, #map .taskList .taskProgress td, #map .taskList .taskProgress th {
+        border: 1px solid #ccc;
+        text-align: center; }
+      #map .taskList .taskProgress table {
+        width: 90%;
+        margin: 10px auto;
+        text-align: center;
+        line-height: 30px; }
+      #map .taskList .taskProgress .subTitle {
+        padding: 10px;
+        color: #2f7fd0; }
+        #map .taskList .taskProgress .subTitle span {
+          color: red; }
+  #map .mapContent {
+    margin: 0 301px 0 231px;
+    height: 300px;
+    background: grey; }
+
+#managemap {
+  width: 100%;
+  height: 100%;
+  min-width: 1080px; }
+  #managemap .toolBar {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px #ccc solid;
+    font-size: 14px; }
+    #managemap .toolBar .tools {
+      height: 30px;
+      margin: 10px 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: left; }
+    #managemap .toolBar ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 5px 10px; }
+    #managemap .toolBar li {
+      display: inline-block;
+      cursor: pointer; }
+    #managemap .toolBar .toolOne {
+      width: 100px; }
+    #managemap .toolBar .toolScan {
+      width: 180px;
+      border-left: 1px #ccc solid; }
+    #managemap .toolBar .toolChoose {
+      width: 300px; }
+      #managemap .toolBar .toolChoose ul {
+        margin: 2px 0 0 0;
+        padding: 0; }
+      #managemap .toolBar .toolChoose li {
+        background: #d0eafa;
+        line-height: 16px;
+        padding: 0px 10px;
+        border-radius: 3px;
+        height: 25px;
+        position: relative;
+        width: 100px;
+        border: 1px solid #d0eafa; }
+        #managemap .toolBar .toolChoose li img {
+          position: absolute;
+          top: 5px; }
+        #managemap .toolBar .toolChoose li span {
+          position: absolute;
+          top: 5px;
+          left: 30px; }
+        #managemap .toolBar .toolChoose li:hover {
+          border: 1px solid #2f7fd0; }
+  #managemap .Layers {
+    width: 230px;
+    float: left;
+    height: 0;
+    border-right: 1px solid #ccc; }
+    #managemap .Layers .headline {
+      background: #f1f2f3;
+      height: 30px;
+      font-size: 1.3em;
+      color: #2f7fd0;
+      line-height: 30px;
+      padding-left: 20px; }
+    #managemap .Layers .taskLayers {
+      height: 90%; }
+      #managemap .Layers .taskLayers .canedit, #managemap .Layers .taskLayers .cantedit {
+        height: 45%; }
+      #managemap .Layers .taskLayers .layer {
+        padding: 20px 20px 10px 20px; }
+      #managemap .Layers .taskLayers ul {
+        padding: 0 40px; }
+      #managemap .Layers .taskLayers .symbol {
+        padding: 5px 20px;
+        cursor: pointer; }
+    #managemap .Layers .sureButton {
+      display: block;
+      width: 80px;
+      margin: 10px auto;
+      line-height: 30px;
+      font-size: 1.2em;
+      color: #fff;
+      background: #2f7fd0;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer; }
+    #managemap .Layers .highlighted {
+      background-color: #ffff66; }
+    #managemap .Layers .validtarget {
+      background-color: lightblue; }
+  #managemap .taskList {
+    width: 300px;
+    float: right;
+    border-left: 1px solid #ccc;
+    height: 82%; }
+    #managemap .taskList h1 {
+      font-size: 1.5em;
+      text-align: center;
+      padding: 10px 5px;
+      background: #f1f2f3;
+      line-height: 20px;
       color: #2f7fd0; }
-      #map .taskList .list .subTitle span {
-        color: red; }
+    #managemap .taskList #datatree {
+      overflow: auto; }
+  #managemap .mapContent {
+    margin: 0 301px 0 231px;
+    height: 300px;
+    background: grey; }
+
+#editmap {
+  width: 100%;
+  height: 100%;
+  min-width: 1080px; }
+  #editmap .toolBar {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px #ccc solid;
+    font-size: 14px; }
+    #editmap .toolBar .tools {
+      height: 30px;
+      margin: 10px 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: left; }
+    #editmap .toolBar ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      padding: 5px 10px; }
+    #editmap .toolBar li {
+      display: inline-block;
+      cursor: pointer; }
+    #editmap .toolBar .toolOne {
+      width: 100px; }
+    #editmap .toolBar .toolScan {
+      width: 180px;
+      border-left: 1px #ccc solid;
+      border-right: 1px #ccc solid; }
+    #editmap .toolBar .toolChoose {
+      width: 300px; }
+      #editmap .toolBar .toolChoose ul {
+        margin: 2px 0 0 0;
+        padding: 0; }
+      #editmap .toolBar .toolChoose li {
+        background: #d0eafa;
+        line-height: 16px;
+        padding: 0px 10px;
+        border-radius: 3px;
+        height: 25px;
+        position: relative;
+        width: 100px;
+        border: 1px solid #d0eafa; }
+        #editmap .toolBar .toolChoose li img {
+          position: absolute;
+          top: 5px; }
+        #editmap .toolBar .toolChoose li span {
+          position: absolute;
+          top: 5px;
+          left: 30px; }
+        #editmap .toolBar .toolChoose li:hover {
+          border: 1px solid #2f7fd0; }
+  #editmap .Layers {
+    width: 230px;
+    float: left;
+    height: 0;
+    border-right: 1px solid #ccc; }
+    #editmap .Layers .headline {
+      background: #f1f2f3;
+      height: 30px;
+      font-size: 1.3em;
+      color: #2f7fd0;
+      line-height: 30px;
+      padding-left: 20px; }
+    #editmap .Layers .taskLayers {
+      height: 280px; }
+      #editmap .Layers .taskLayers .layer {
+        padding: 20px 20px 10px 20px; }
+      #editmap .Layers .taskLayers ul {
+        padding: 0 40px; }
+      #editmap .Layers .taskLayers .symbol {
+        padding: 5px 20px;
+        cursor: pointer; }
+    #editmap .Layers .taskDesc .taskDescContent {
+      padding: 20px; }
+    #editmap .Layers .taskPp .taskPpContent {
+      position: relative;
+      margin: 10px 20px; }
+    #editmap .Layers .taskPp select {
+      width: 200px;
+      height: 25px;
+      border: 1px solid #ccc; }
+    #editmap .Layers .taskDate .taskDateContent {
+      position: relative;
+      margin: 10px 20px; }
+    #editmap .Layers .taskDate input {
+      width: 200px;
+      height: 25px;
+      border: 1px solid #ccc; }
+    #editmap .Layers .sureButton {
+      display: block;
+      width: 80px;
+      margin: 10px auto;
+      line-height: 30px;
+      font-size: 1.2em;
+      color: #fff;
+      background: #2f7fd0;
+      border-radius: 5px;
+      text-align: center;
+      cursor: pointer; }
+  #editmap .taskList {
+    width: 300px;
+    float: right;
+    border-left: 1px solid #ccc;
+    height: 82%; }
+    #editmap .taskList .taskListHead {
+      margin-top: 20px;
+      height: 30px;
+      border-bottom: 1px solid #ccc; }
+      #editmap .taskList .taskListHead ul {
+        width: 80%;
+        margin: 0 auto; }
+        #editmap .taskList .taskListHead ul li {
+          display: inline-block;
+          width: 48%;
+          text-align: center;
+          line-height: 29px;
+          cursor: pointer;
+          border: 1px solid transparent; }
+        #editmap .taskList .taskListHead ul .clicked {
+          border: 1px solid #ccc;
+          border-bottom: 1px solid #fff; }
+        #editmap .taskList .taskListHead ul .selectedTab {
+          color: #2f7fd0;
+          border-top: 1px solid #ccc;
+          border-left: 1px solid #ccc;
+          border-right: 1px solid #ccc;
+          border-bottom: 1px solid #fff; }
+    #editmap .taskList .list {
+      margin: 10px; }
+      #editmap .taskList .list .listContent {
+        margin: 5px 0;
+        padding: 10px 0;
+        cursor: pointer; }
+        #editmap .taskList .list .listContent li {
+          line-height: 16px;
+          padding-left: 5px; }
+          #editmap .taskList .list .listContent li span {
+            padding-left: 5px; }
+        #editmap .taskList .list .listContent li + li {
+          padding-top: 5px; }
+        #editmap .taskList .list .listContent:hover {
+          background-color: #ccc; }
+      #editmap .taskList .list .line {
+        width: 90%;
+        margin: auto;
+        border-bottom: 1px solid #ccc; }
+    #editmap .taskList .taskTable {
+      height: 500px;
+      overflow-y: auto; }
+    #editmap .taskList .taskProgress {
+      display: none; }
+      #editmap .taskList .taskProgress table, #editmap .taskList .taskProgress td, #editmap .taskList .taskProgress th {
+        border: 1px solid #ccc;
+        text-align: center; }
+      #editmap .taskList .taskProgress table {
+        width: 90%;
+        margin: 10px auto;
+        text-align: center;
+        line-height: 30px; }
+      #editmap .taskList .taskProgress .subTitle {
+        padding: 10px;
+        color: #2f7fd0; }
+        #editmap .taskList .taskProgress .subTitle span {
+          color: red; }
+  #editmap .mapContent {
+    margin: 0 301px 0 231px;
+    height: 300px;
+    background: grey; }
 
 #taskdetail .detailPage {
   width: 1080px;

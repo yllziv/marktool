@@ -2,7 +2,7 @@ $border-grey: #ccc;
 $titleBg: #2f7fd0;
 $taskHeadLine: #f1f2f3;
 $light-blue: #d0eafa;
-#map{
+#managemap{
   width:100%;
   height:100%;
   min-width:1080px;
@@ -40,7 +40,6 @@ $light-blue: #d0eafa;
     .toolScan {
       width: 180px;
       border-left: 1px $border-grey solid;
-      border-right: 1px $border-grey solid;
     }
 
     .toolChoose {
@@ -78,7 +77,7 @@ $light-blue: #d0eafa;
 
 
 
-  //******************* 任务 *********************
+  //******************* 任务图层 *********************
   .Layers {
     width: 230px;
     float: left;
@@ -93,7 +92,10 @@ $light-blue: #d0eafa;
       padding-left: 20px;
     }
     .taskLayers {
-      height: 280px;
+      height: 90%;
+      .canedit, .cantedit{
+        height: 45%;
+      }
       .layer {
         padding: 20px 20px 10px 20px;
       }
@@ -105,36 +107,7 @@ $light-blue: #d0eafa;
         cursor: pointer;
       }
     }
-    .taskDesc {
 
-      .taskDescContent {
-        padding: 20px;
-      }
-    }
-    .taskPp {
-
-      .taskPpContent {
-        position: relative;
-        margin: 10px 20px;
-      }
-      select {
-        width: 200px;
-        height: 25px;
-        border: 1px solid $border-grey;
-      }
-    }
-    .taskDate {
-
-      .taskDateContent {
-        position: relative;
-        margin: 10px 20px;
-      }
-      input {
-        width: 200px;
-        height: 25px;
-        border: 1px solid $border-grey;
-      }
-    }
     .sureButton {
       display: block;
       width: 80px;
@@ -147,98 +120,34 @@ $light-blue: #d0eafa;
       text-align: center;
       cursor:pointer;
     }
+
+    //拖动背景色
+    .highlighted{
+      background-color: lighten(yellow,20);
+    }
+    .validtarget{
+      background-color: lightblue;
+    }
   }
 
-  //****************** 任务列表 *****************
+  //****************** 数据目录 *****************
   .taskList {
     width: 300px;
     float:right;
     border-left: 1px solid $border-grey;
     height: 82%;
-
-    .taskListHead {
-      margin-top: 20px;
-      height:30px;
-      ul {
-        width:80%;
-        margin:0 auto;
-        li {
-          display: inline-block;
-          width: 48%;
-          text-align: center;
-          line-height: 29px;
-          cursor:pointer;
-          border:1px solid transparent;
-        }
-        .clicked{
-          border:1px solid $border-grey;
-          border-bottom:1px solid #fff;
-        }
-        .selectedTab {
-          color: $titleBg;
-          border-top: 1px solid $border-grey;
-          border-left: 1px solid $border-grey;
-          border-right: 1px solid $border-grey;
-          border-bottom: 1px solid #fff;
-        }
-      }
-      border-bottom: 1px solid $border-grey;
+    h1{
+      font-size:1.5em;
+      text-align:center;
+      padding:10px 5px;
+      background: $taskHeadLine;
+      line-height: 20px;
+      color: $titleBg;
+    }
+    #datatree{
+      overflow: auto;
     }
 
-    .list {
-      margin: 10px;
-
-      .listContent {
-        margin: 5px 0;
-        padding:10px 0;
-        cursor:pointer;
-        li {
-          line-height: 16px;
-          padding-left: 5px;
-          span {
-            padding-left: 5px;
-          }
-        }
-        li+li {
-          padding-top: 5px;
-        }
-        &:hover{
-          background-color: $border-grey;
-        }
-      }
-      .line {
-
-        width: 90%;
-        margin: auto;
-        border-bottom: 1px solid $border-grey;
-      }
-
-    }
-    .taskTable{
-      height:500px;
-      overflow-y:auto;
-    }
-
-    .taskProgress{
-      display: none;
-      table, td, th {
-        border: 1px solid $border-grey;
-        text-align: center;
-      }
-      table {
-        width: 90%;
-        margin: 10px auto;
-        text-align: center;
-        line-height: 30px;
-      }
-      .subTitle {
-        padding: 10px;
-        color: $titleBg;
-        span {
-          color:red;
-        }
-      }
-    }
   }
 
 

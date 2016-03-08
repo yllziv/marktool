@@ -1,7 +1,9 @@
 var HomePg = {
     init: function(){},        // 初始化，事件
     autoHeight: function(){},  // 自动调整子页面高度
-    changePage: function(){}   // 切换子页面
+    getPageName: function(){},   // 获取子页面标题
+    gotoPage: function(){}      // 跳转到子页面
+
 };
 
 $(document).ready(function(){
@@ -10,7 +12,8 @@ $(document).ready(function(){
 
 HomePg.init = function() {
     $('.nav').on('click','li',function(e){
-        HomePg.changePage(e);
+        var pageName = HomePg.getPageName(e);
+        HomePg.gotoPage(pageName);
     });
 
     $('.myself').click(function(){
@@ -28,7 +31,7 @@ HomePg.autoHeight = function(){
     $("#Iframe").show();
 };
 
-HomePg.changePage = function(e){
+HomePg.getPageName = function(e){
     var pageName = $(e.target).text();
     var chageNav = function(num){
         $('.navcenter li:eq('+num+')').addClass('clicked')
@@ -67,6 +70,15 @@ HomePg.changePage = function(e){
             default:
                 pageName = 'project';
         }
-        $("#Iframe").attr('src', "../view/" + pageName + ".html");
+        return pageName;
     }
+}
+
+HomePg.gotoPage = function(pageName) {
+    $("#Iframe").attr('src', "../view/" + pageName + ".html");
+}
+
+
+function aa(){
+    return 'aa';
 }

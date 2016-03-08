@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--js库开始-->
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
+    <script type="text/javascript" src="../bower_components/jstree/dist/jstree.js"></script>
+    <script type="text/javascript" src="../js/zivlib.js"></script>
+    <!--js库结束-->
+
+    <!--css样式开始-->
+    <link type="text/css" rel="stylesheet" href="../css/reset.css"/>
+    <link type="text/css" rel="stylesheet" href="../bower_components/jstree/dist/themes/default/style.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/index.css"/>
+    <!--css样式结束-->
+</head>
+<div id="managemap">
+    <!--工具条开始-->
+    <div class="toolBar">
+        <div class="tools">
+            <div class="toolOne">
+                <ul>
+                    <li id="newMap"><img src="../img/newFile.png"></li>
+                    <li id="saveMap"><img src="../img/save.png"></li>
+                </ul>
+            </div>
+            <div class="toolScan">
+                <ul>
+                    <li id="zoomout"><img src="../img/large.png"></li>
+                    <li id="zoomin"><img src="../img/small.png"></li>
+                    <li id="fullMap"><img src="../img/scan.png"></li>
+                    <li id="panMap"><img src="../img/hand.png"></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+    <!--工具条结束-->
+
+    <!--图层开始-->
+    <div class="Layers">
+        <div class="taskLayers">
+            <div class="canedit">
+                <div class="headline">可编辑图层</div>
+                <div class="taskLayersContent">
+                    <div class="layer">
+                        <img src="../img/layer.jpg">
+                        <span>图层</span>
+                    </div>
+                    <ul id="caneditLayer">
+                        <li><label><input type="checkbox" value="layer1"/>&nbsp layer1</label>
+                        </li>
+                        <img class="symbol" src="../img/symbol.jpg">
+                        <li><label><input type="checkbox" value="layer2"/>&nbsp layer2</label>
+                        </li>
+                        <img class="symbol" src="../img/symbol.jpg">
+                    </ul>
+                </div>
+            </div>
+            <div class="cantedit">
+                <div class="headline">不可编辑图层</div>
+                <div class="taskLayersContent">
+                    <div class="layer">
+                        <img src="../img/layer.jpg">
+                        <span>图层</span>
+                    </div>
+                    <ul id="canteditLayer">
+                        <li><label><input type="checkbox" value="layer1"/>&nbsp layer1</label>
+                        </li>
+                        <img class="symbol" src="../img/symbol.jpg">
+                        <li><label><input type="checkbox" value="layer2"/>&nbsp layer2</label>
+                        </li>
+                        <img class="symbol" src="../img/symbol.jpg">
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <button class="sureButton">确定</button>
+    </div>
+    <!--图层结束-->
+
+    <!--数据目录开始-->
+    <div class="taskList">
+        <h1>数据目录</h1>
+        <div id="datatree">
+            <ul>
+                <li>图层中间件</li>
+                <li>底图库
+                    <ul>
+                        <li>PostGIS库</li>
+                        <li data-jstree='{"opened":true,"selected":true}'><a href="#">WTMS库</a>
+                            <ul>
+                                <li class="layer" draggable="true" data-name="图层1" data-jstree='{"icon":"../img/leaf.png"}'>图层1</li>
+                                <li class="layer"  draggable="true"  data-name="图层2" data-jstree='{"icon":"../img/leaf.png"}'>图层2</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--数据目录结束-->
+
+    <!--地图开始-->
+    <div class="mapContent"></div>
+    <!--地图结束-->
+</div>
+
+<!--自定义脚本开始-->
+<script src="../js/managemap.js"></script>
+<!--自定义脚本结束-->
+</body>
+</html>

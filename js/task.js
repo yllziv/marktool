@@ -4,10 +4,16 @@ var TaskPg = {
 };
 
 $(document).ready(function(){
-
+    TaskPgN.init();
 });
 
-TaskPg.goTaskDailPg = function(){
-
+TaskPg.init = function() {
+    $('.onelist').on('click','label',function(e){ // 点击任务详情
+        TaskPg.goTaskDailPg();
+    })
 }
+
+TaskPg.goTaskDailPg = function() {
+    window.parent.HomePg.gotoPage('taskdetail');
+};
 
