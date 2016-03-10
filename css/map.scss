@@ -44,7 +44,7 @@ $light-blue: #d0eafa;
     }
 
     .toolChoose {
-      width: 300px;
+      width: 420px;
       ul{
         margin:2px 0 0 0;
         padding:0;
@@ -71,6 +71,11 @@ $light-blue: #d0eafa;
 
         &:hover {
           border: 1px solid $titleBg;
+        }
+        &:last-child{
+          width:100px;
+          text-align: center;
+
         }
       }
     }

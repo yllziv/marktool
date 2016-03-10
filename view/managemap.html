@@ -6,12 +6,14 @@
     <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
     <script type="text/javascript" src="../bower_components/jstree/dist/jstree.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery-treeview/jquery.treeview.js"></script>
     <script type="text/javascript" src="../js/zivlib.js"></script>
     <!--js库结束-->
 
     <!--css样式开始-->
     <link type="text/css" rel="stylesheet" href="../css/reset.css"/>
     <link type="text/css" rel="stylesheet" href="../bower_components/jstree/dist/themes/default/style.min.css"/>
+    <link type="text/css" rel="stylesheet" href="../bower_components/jquery-treeview/jquery.treeview.css"/>
     <link type="text/css" rel="stylesheet" href="../css/index.css"/>
     <!--css样式结束-->
 </head>
@@ -50,11 +52,11 @@
                     </div>
                     <ul id="caneditLayer">
                         <li><label><input type="checkbox" value="layer1"/>&nbsp layer1</label>
+                            <br/><img class="symbol" src="../img/symbol.jpg">
                         </li>
-                        <img class="symbol" src="../img/symbol.jpg">
                         <li><label><input type="checkbox" value="layer2"/>&nbsp layer2</label>
+                            <br/><img class="symbol" src="../img/symbol.jpg">
                         </li>
-                        <img class="symbol" src="../img/symbol.jpg">
                     </ul>
                 </div>
             </div>
@@ -67,33 +69,45 @@
                     </div>
                     <ul id="canteditLayer">
                         <li><label><input type="checkbox" value="layer1"/>&nbsp layer1</label>
+                            <br/></br><img class="symbol" src="../img/symbol.jpg">
                         </li>
-                        <img class="symbol" src="../img/symbol.jpg">
                         <li><label><input type="checkbox" value="layer2"/>&nbsp layer2</label>
+                            <br/><img class="symbol" src="../img/symbol.jpg">
                         </li>
-                        <img class="symbol" src="../img/symbol.jpg">
                     </ul>
                 </div>
             </div>
         </div>
-
-        <button class="sureButton">确定</button>
+        <div class="layerBtn">
+            <button class="deleteButton">删除</button>
+            <button class="sureButton">确定</button>
+        </div>
     </div>
     <!--图层结束-->
 
     <!--数据目录开始-->
     <div class="taskList">
         <h1>数据目录</h1>
-        <div id="datatree">
-            <ul>
-                <li>图层中间件</li>
-                <li>底图库
+
+        <div>
+            <ul id="datatree" class="filetree treeview-famfamfam">
+                <li><span class="folder">数据目录</span>
                     <ul>
-                        <li>PostGIS库</li>
-                        <li data-jstree='{"opened":true,"selected":true}'><a href="#">WTMS库</a>
+                        <li><span class="图层中间库"></span></li>
+                        <li><span class="folder">底图库</span>
                             <ul>
-                                <li class="layer" draggable="true" data-name="图层1" data-jstree='{"icon":"../img/leaf.png"}'>图层1</li>
-                                <li class="layer"  draggable="true"  data-name="图层2" data-jstree='{"icon":"../img/leaf.png"}'>图层2</li>
+                                <li><span class="folder">PostGIS库</span>
+                                    <ul id="folder21">
+                                        <li><span class="file" draggable="true" data-name="路网数据">路网数据</span></li>
+                                        <li><span class="file" draggable="true" data-name="红绿灯数据">红绿灯数据</span></li>
+                                    </ul>
+                                </li>
+                                <li class="closed"><span class="folder">WMTS服务</span>
+                                    <ul>
+                                        <li><span class="file" draggable="true" data-name="武汉市矢量底图">武汉市矢量底图</span></li>
+                                        <li><span class="file" draggable="true" data-name="武汉市影像底图">武汉市影像底图</span></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </li>
                     </ul>

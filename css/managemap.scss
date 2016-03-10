@@ -94,31 +94,35 @@ $light-blue: #d0eafa;
     .taskLayers {
       height: 90%;
       .canedit, .cantedit{
-        height: 45%;
+        height: 47%;
       }
       .layer {
         padding: 20px 20px 10px 20px;
       }
       ul {
         padding:0 40px;
+        overflow: auto;
       }
       .symbol {
         padding: 5px 20px;
         cursor: pointer;
       }
     }
-
-    .sureButton {
-      display: block;
-      width: 80px;
-      margin: 10px auto;
-      line-height: 30px;
-      font-size: 1.2em;
-      color: #fff;
-      background: $titleBg;
-      border-radius: 5px;
-      text-align: center;
-      cursor:pointer;
+    .layerBtn {
+        text-align: center;
+      .sureButton, .deleteButton {
+        display: inline-block;
+        width: 80px;
+        margin: 10px auto;
+        line-height: 30px;
+        font-size: 1.2em;
+        color: #fff;
+        background: $titleBg;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        outline:none;
+      }
     }
 
     //拖动背景色

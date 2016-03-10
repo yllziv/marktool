@@ -477,7 +477,7 @@
       border-left: 1px #ccc solid;
       border-right: 1px #ccc solid; }
     #map .toolBar .toolChoose {
-      width: 300px; }
+      width: 420px; }
       #map .toolBar .toolChoose ul {
         margin: 2px 0 0 0;
         padding: 0; }
@@ -499,6 +499,9 @@
           left: 30px; }
         #map .toolBar .toolChoose li:hover {
           border: 1px solid #2f7fd0; }
+        #map .toolBar .toolChoose li:last-child {
+          width: 100px;
+          text-align: center; }
   #map .Layers {
     width: 230px;
     float: left;
@@ -683,25 +686,29 @@
     #managemap .Layers .taskLayers {
       height: 90%; }
       #managemap .Layers .taskLayers .canedit, #managemap .Layers .taskLayers .cantedit {
-        height: 45%; }
+        height: 47%; }
       #managemap .Layers .taskLayers .layer {
         padding: 20px 20px 10px 20px; }
       #managemap .Layers .taskLayers ul {
-        padding: 0 40px; }
+        padding: 0 40px;
+        overflow: auto; }
       #managemap .Layers .taskLayers .symbol {
         padding: 5px 20px;
         cursor: pointer; }
-    #managemap .Layers .sureButton {
-      display: block;
-      width: 80px;
-      margin: 10px auto;
-      line-height: 30px;
-      font-size: 1.2em;
-      color: #fff;
-      background: #2f7fd0;
-      border-radius: 5px;
-      text-align: center;
-      cursor: pointer; }
+    #managemap .Layers .layerBtn {
+      text-align: center; }
+      #managemap .Layers .layerBtn .sureButton, #managemap .Layers .layerBtn .deleteButton {
+        display: inline-block;
+        width: 80px;
+        margin: 10px auto;
+        line-height: 30px;
+        font-size: 1.2em;
+        color: #fff;
+        background: #2f7fd0;
+        border-radius: 5px;
+        text-align: center;
+        cursor: pointer;
+        outline: none; }
     #managemap .Layers .highlighted {
       background-color: #ffff66; }
     #managemap .Layers .validtarget {
@@ -754,29 +761,15 @@
       width: 180px;
       border-left: 1px #ccc solid;
       border-right: 1px #ccc solid; }
-    #editmap .toolBar .toolChoose {
-      width: 300px; }
-      #editmap .toolBar .toolChoose ul {
-        margin: 2px 0 0 0;
-        padding: 0; }
-      #editmap .toolBar .toolChoose li {
-        background: #d0eafa;
-        line-height: 16px;
-        padding: 0px 10px;
-        border-radius: 3px;
-        height: 25px;
-        position: relative;
-        width: 100px;
-        border: 1px solid #d0eafa; }
-        #editmap .toolBar .toolChoose li img {
-          position: absolute;
-          top: 5px; }
-        #editmap .toolBar .toolChoose li span {
-          position: absolute;
-          top: 5px;
-          left: 30px; }
-        #editmap .toolBar .toolChoose li:hover {
-          border: 1px solid #2f7fd0; }
+    #editmap .toolBar .tooEdit {
+      width: 700px; }
+      #editmap .toolBar .tooEdit li {
+        border-right: 1px #ccc solid;
+        padding: 0 10px; }
+        #editmap .toolBar .tooEdit li img {
+          margin: 0 5px; }
+        #editmap .toolBar .tooEdit li span {
+          margin: 0 5px; }
   #editmap .Layers {
     width: 230px;
     float: left;
@@ -798,33 +791,18 @@
       #editmap .Layers .taskLayers .symbol {
         padding: 5px 20px;
         cursor: pointer; }
-    #editmap .Layers .taskDesc .taskDescContent {
-      padding: 20px; }
-    #editmap .Layers .taskPp .taskPpContent {
-      position: relative;
-      margin: 10px 20px; }
-    #editmap .Layers .taskPp select {
-      width: 200px;
-      height: 25px;
-      border: 1px solid #ccc; }
-    #editmap .Layers .taskDate .taskDateContent {
-      position: relative;
-      margin: 10px 20px; }
-    #editmap .Layers .taskDate input {
-      width: 200px;
-      height: 25px;
-      border: 1px solid #ccc; }
-    #editmap .Layers .sureButton {
-      display: block;
-      width: 80px;
-      margin: 10px auto;
-      line-height: 30px;
-      font-size: 1.2em;
-      color: #fff;
-      background: #2f7fd0;
-      border-radius: 5px;
-      text-align: center;
-      cursor: pointer; }
+  #editmap .sureButton {
+    display: block;
+    width: 80px;
+    margin: 10px auto;
+    line-height: 30px;
+    font-size: 1.2em;
+    color: #fff;
+    background: #2f7fd0;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    outline: none; }
   #editmap .taskList {
     width: 300px;
     float: right;
@@ -877,6 +855,14 @@
       overflow-y: auto; }
     #editmap .taskList .taskProgress {
       display: none; }
+      #editmap .taskList .taskProgress .marktotal, #editmap .taskList .taskProgress .markattr {
+        overflow: auto;
+        min-height: 200px;
+        max-height: 400px; }
+      #editmap .taskList .taskProgress .editMarkName {
+        width: 75px; }
+      #editmap .taskList .taskProgress .holder {
+        text-align: center; }
       #editmap .taskList .taskProgress table, #editmap .taskList .taskProgress td, #editmap .taskList .taskProgress th {
         border: 1px solid #ccc;
         text-align: center; }
@@ -890,6 +876,10 @@
         color: #2f7fd0; }
         #editmap .taskList .taskProgress .subTitle span {
           color: red; }
+      #editmap .taskList .taskProgress .markattr tr th:nth-child(1) {
+        width: 100px; }
+      #editmap .taskList .taskProgress .markattr select, #editmap .taskList .taskProgress .markattr input {
+        width: 85%; }
   #editmap .mapContent {
     margin: 0 301px 0 231px;
     height: 300px;

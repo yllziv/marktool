@@ -1,4 +1,5 @@
 var MapPg = {
+    prevTrElement:null,
     init: function(){},
     resizePg: function(){}, // 页面大小变换
     switchPanel: function(){}, // 切换右侧面板
@@ -14,14 +15,20 @@ var MapObj = {
     zoomin: function(){}, // 缩小
     fullMap: function(){}, // 全图
     panMap: function(){}, // 漫游
-    selectRect: function(){}, // 按矩形选择
-    selectPoly: function(){} // 按多边形选择
+    startEdit: function(){}, // 开始编辑
+    editPoint: function(){}, // 点
+    editLine: function(){}, // 线
+    editPolygon: function(){}, // 面
+    selectFeature: function(){}, // 选择要素
+    modifyFeature: function(){}, // 修改要素
+    deleteFeature: function(){} // 删除要素
 };
 
 
 $(document).ready(function(){
     MapPg.init();
-})
+
+});
 
 MapPg.init = function() {
     $(document).ready(function(){
@@ -42,10 +49,21 @@ MapPg.init = function() {
         $('#zoomin').click(function(){ MapObj.zoomin(); });
         $('#fullMap').click(function(){ MapObj.fullMap();  });
         $('#panMap').click(function(){ MapObj.panMap(); });
-        $('#selectRect').click(function(){ MapObj.selectRect(); });
-        $('#selectPoly').click(function(){ MapObj.selectPoly();  });
-        $('.sureButton').click(function(){
-            MapPg.submitForm();
+        $('#startEdit').click(function(){ MapObj.startEdit(); });
+        $('#editPoint').click(function(){ MapObj.editPoint();  });
+        $('#editLine').click(function(){ MapObj.editLine();  });
+        $('#editPolygon').click(function(){ MapObj.editPolygon();  });
+        $('#selectFeature').click(function(){ MapObj.selectFeature();  });
+        $('#modifyFeature').click(function(){ MapObj.modifyFeature();  });
+        $('#deleteFeature').click(function(){ MapObj.deleteFeature();  });
+        $('.sureButton').click(function(){MapPg.submitForm();})
+        $('#marktotalTBody').on('click','tr',function(e){
+            $('#markAtrrTBody').html(
+
+            );
+        });
+        $('#marktotalTBody tr').on('blur','td:first-child',function(){
+            $(this).next().html((new Date()).pattern("yyyy-MM-dd hh:mm:ss"))
         })
     })
 
@@ -56,6 +74,8 @@ MapPg.resizePg = function() {
     $('.mapContent').height($(window).height() - 52);
     $('.taskList').height($(window).height() - 52);
     $('.taskTable').height($(window).height() - 130);
+    $('.marktotal').height(($(window).height() - 130)/2);
+    $('.markattr').height(($(window).height() - 130)/2 -80);
 };
 
 MapPg.switchPanel = function(index){
@@ -70,17 +90,19 @@ MapPg.switchPanel = function(index){
             $('.taskListHead li:eq(0)').removeClass('clicked');
             $('.taskTable').hide();
             $('.taskProgress').show();
+            $("div.holder").jPages({
+                containerID : "marktotalTBody",
+                previous : "←",
+                next : "→",
+                perPage : 8,
+                delay : 8
+            });
         }
     }
 };
 
 MapPg.submitForm = function(){
-    var taskInfo = {};
-    taskInfo.taskDesc = $('.taskDescContent textarea').val();
-    taskInfo.taskPeople = $('.taskPpContent select').val();
-    taskInfo.taskDate = $('.taskDateContent input').val();
-    MapPg.addTask(taskInfo);
-    console.log(taskInfo);
+    alert('save attr');
 
 };
 
@@ -128,9 +150,24 @@ MapObj.fullMap = function(){
 MapObj.panMap = function(){
     alert('panMap')
 };
-MapObj.selectRect = function(){
-    alert('selectRect')
+MapObj.startEdit = function(){
+    alert('startEdit')
 };
-MapObj.selectPoly = function(){
-    alert('selectPoly')
+MapObj.editPoint = function(){
+    alert('editPoint')
+};
+MapObj.editLine = function(){
+    alert('editLine')
+};
+MapObj.editPolygon = function(){
+    alert('editPolygon')
+};
+MapObj.selectFeature = function(){
+    alert('selectFeature')
+};
+MapObj.modifyFeature = function(){
+    alert('modifyFeature')
+};
+MapObj.deleteFeature = function(){
+    alert('deleteFeature')
 };

@@ -42,35 +42,16 @@ $light-blue: #d0eafa;
       border-left: 1px $border-grey solid;
       border-right: 1px $border-grey solid;
     }
-
-    .toolChoose {
-      width: 300px;
-      ul{
-        margin:2px 0 0 0;
-        padding:0;
-      }
-      li {
-        background: $light-blue;
-        line-height: 16px;
-        padding: 0px 10px;
-        border-radius: 3px;
-        height: 25px;
-        position: relative;
-        width: 100px;
-        border: 1px solid $light-blue;
-        img {
-          position: absolute;
-          top: 5px;
+    .tooEdit{
+      width: 700px;
+      li{
+        border-right: 1px $border-grey solid;
+        padding:0 10px;
+        img{
+          margin:0 5px;
         }
-        span {
-          position: absolute;
-          top: 5px;
-          left: 30px;
-
-        }
-
-        &:hover {
-          border: 1px solid $titleBg;
+        span{
+          margin:0 5px;
         }
       }
     }
@@ -105,48 +86,20 @@ $light-blue: #d0eafa;
         cursor: pointer;
       }
     }
-    .taskDesc {
 
-      .taskDescContent {
-        padding: 20px;
-      }
-    }
-    .taskPp {
-
-      .taskPpContent {
-        position: relative;
-        margin: 10px 20px;
-      }
-      select {
-        width: 200px;
-        height: 25px;
-        border: 1px solid $border-grey;
-      }
-    }
-    .taskDate {
-
-      .taskDateContent {
-        position: relative;
-        margin: 10px 20px;
-      }
-      input {
-        width: 200px;
-        height: 25px;
-        border: 1px solid $border-grey;
-      }
-    }
-    .sureButton {
-      display: block;
-      width: 80px;
-      margin: 10px auto;
-      line-height: 30px;
-      font-size: 1.2em;
-      color: #fff;
-      background: $titleBg;
-      border-radius: 5px;
-      text-align: center;
-      cursor:pointer;
-    }
+  }
+  .sureButton {
+    display: block;
+    width: 80px;
+    margin: 10px auto;
+    line-height: 30px;
+    font-size: 1.2em;
+    color: #fff;
+    background: $titleBg;
+    border-radius: 5px;
+    text-align: center;
+    cursor:pointer;
+    outline:none;
   }
 
   //****************** 任务列表 *****************
@@ -221,6 +174,17 @@ $light-blue: #d0eafa;
 
     .taskProgress{
       display: none;
+      .marktotal, .markattr{
+        overflow: auto;
+        min-height:200px;
+        max-height:400px;
+      }
+      .editMarkName{
+        width:75px;
+      }
+      .holder{
+        text-align:center;
+      }
       table, td, th {
         border: 1px solid $border-grey;
         text-align: center;
@@ -236,6 +200,14 @@ $light-blue: #d0eafa;
         color: $titleBg;
         span {
           color:red;
+        }
+      }
+      .markattr{
+        tr th:nth-child(1){
+          width:100px;
+        }
+        select, input{
+          width:85%;
         }
       }
     }

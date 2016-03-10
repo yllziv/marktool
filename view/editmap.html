@@ -5,12 +5,15 @@
     <!--js库开始-->
     <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
     <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
+    <script type="text/javascript" src="../bower_components/jPages/js/jPages.js"></script>
     <script type="text/javascript" src="../js/zivlib.js"></script>
     <!--js库结束-->
 
     <!--css样式开始-->
-    <link type="text/css" rel="stylesheet" href="../css/reset.css" />
-    <link type="text/css" rel="stylesheet" href="../css/index.css" />
+    <link type="text/css" rel="stylesheet" href="../css/reset.css"/>
+    <link type="text/css" rel="stylesheet" href="../bower_components/jPages/css/jPages.css"/>
+    <link type="text/css" rel="stylesheet" href="../bower_components/jPages/css/animate.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/index.css"/>
     <!--css样式结束-->
 </head>
 <div id="editmap">
@@ -31,17 +34,21 @@
                     <li id="panMap"><img src="../img/hand.png"></li>
                 </ul>
             </div>
-            <div class="toolChoose">
+            <div class="tooEdit">
                 <ul>
-                    <li id="selectRect"><img src="../img/jx.png"><span>按矩形选择</span></li>
-                    <li id="selectPoly"><img src="../img/dbx.png"><span>按多边形选择</span></li>
+                    <li id="startEdit"><img src="../img/toolbar/ksbj.png"><span>开始编辑</span></li>
+                    <li id="editPoint"><img src="../img/toolbar/dian.png"><span>点</span></li>
+                    <li id="editLine"><img src="../img/toolbar/xian.png"><span>线</span></li>
+                    <li id="editPolygon"><img src="../img/toolbar/mian.png"><span>面</span></li>
+                    <li id="selectFeature"><img src="../img/toolbar/xzys.png"><span>选择要素</span></li>
+                    <li id="modifyFeature"><img src="../img/toolbar/xgys.png"><span>修改要素</span></li>
+                    <li id="deleteFeature"><img src="../img/toolbar/scys.png"><span>删除要素</span></li>
                 </ul>
             </div>
         </div>
 
     </div>
     <!--工具条结束-->
-
     <!--任务开始-->
     <div class="Layers">
         <div>
@@ -53,38 +60,15 @@
                         <span>图层</span>
                     </div>
                     <ul>
-                        <li><label><input type="checkbox" value="layer1" />&nbsp layer1</label>
+                        <li><label><input type="checkbox" value="layer1"/>&nbsp layer1</label>
                         </li>
-                        <img class="symbol"  src="../img/symbol.jpg">
+                        <img class="symbol" src="../img/symbol.jpg">
                         <li><label><input type="checkbox" value="layer2"/>&nbsp layer2</label>
                         </li>
                         <img class="symbol" src="../img/symbol.jpg">
                     </ul>
                 </div>
             </div>
-            <div class="taskDesc">
-                <div class="headline">任务描述</div>
-                <div class="taskDescContent">
-                    <textarea></textarea>
-                </div>
-            </div>
-            <div class="taskPp">
-                <div class="headline">指派人员</div>
-                <div class="taskPpContent">
-                    <select>
-                        <option>one</option>
-                        <option>two</option>
-                        <option>three</option>
-                    </select>
-                </div>
-            </div>
-            <div class="taskDate">
-                <div class="headline">截至日期</div>
-                <div class="taskDateContent">
-                    <input type="date" />
-                </div>
-            </div>
-            <button class="sureButton">确定</button>
         </div>
     </div>
     <!--任务结束-->
@@ -98,7 +82,7 @@
             </ul>
         </div>
         <!--任务内容开始-->
-        <div class="list taskTable" >
+        <div class="list taskTable">
             <div>
                 <ul id="taskListUL">
                     <li>
@@ -160,45 +144,75 @@
 
         <!--任务进度开始-->
         <div class="list taskProgress">
-            <p class="subTitle">已标注总数: <span>106</span></p>
-            <table>
-                <tr>
-                    <th>标注</th>
-                    <th>时间</th>
-                </tr>
-                <tr>
-                    <td>polygon01</td>
-                    <td>2016年1月28日 15:08:20</td>
-                </tr>
-                <tr>
-                    <td>polygon01</td>
-                    <td>2016年1月28日 15:08:20</td>
-                </tr>
-                <tr>
-                    <td>polygon01</td>
-                    <td>2016年1月28日 15:08:20</td>
-                </tr>
-            </table>
+            <section class="marktotal">
+                <p class="subTitle">已标注总数: <span>106</span></p>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>标注唯一值</th>
+                        <th>时间</th>
+                    </tr>
+                    </thead>
+                    <tbody id="marktotalTBody">
+                    <tr>
+                        <!--<td><input class="editMarkName" value="polygon00" type="text"></td>-->
+                        <td>1457576287462333</td>
+                        <td>2016-03-09 07:40:10</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="holder"></div>
+            </section>
             <p class="subTitle">标注属性</p>
-            <table>
-                <tr>
-                    <th>属性名</th>
-                    <th>属性值</th>
-                </tr>
-                <tr>
-                    <td>ID</td>
-                    <td>001</td>
-                </tr>
-                <tr>
-                    <td>类型</td>
-                    <td>线</td>
-                </tr>
-                <tr>
-                    <td>等级</td>
-                    <td>1</td>
-                </tr>
-            </table>
-
+            <div class="markattr">
+                <table>
+                    <thead>
+                    <tr>
+                        <th>属性名</th>
+                        <th>属性值</th>
+                    </tr>
+                    </thead>
+                    <tbody id="markAtrrTBody">
+                    <tr>
+                        <td>ID</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>类型</td>
+                        <td><select>
+                            <option>点</option>
+                            <option>线</option>
+                            <option>面</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>等级</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>ID</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>类型</td>
+                        <td><select>
+                            <option>点</option>
+                            <option>线</option>
+                            <option>面</option>
+                        </select></td>
+                    </tr>
+                    <tr>
+                        <td>等级</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    <tr>
+                        <td>ID</td>
+                        <td><input type="text"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="sureButton">保存</button>
         </div>
         <!--任务进度结束-->
     </div>
@@ -210,7 +224,7 @@
 </div>
 
 <!--自定义脚本开始-->
-<script src="../js/map.js"></script>
+<script src="../js/editmap.js"></script>
 <!--自定义脚本结束-->
 </body>
 </html>

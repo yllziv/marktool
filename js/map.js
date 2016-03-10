@@ -15,7 +15,8 @@ var MapObj = {
     fullMap: function(){}, // 全图
     panMap: function(){}, // 漫游
     selectRect: function(){}, // 按矩形选择
-    selectPoly: function(){} // 按多边形选择
+    selectPoly: function(){}, // 按多边形选择
+    backoutBtn: function(){} // 撤销按钮
 };
 
 
@@ -33,7 +34,7 @@ MapPg.init = function() {
             var index = $(this).index();
             MapPg.switchPanel(index);
         });
-        $('.listContent').click(function(){
+        $('#taskListUL').on('click','.listContent',function(){
             MapPg.switchPanel(1);
         });
         $('#newMap').click(function(){ MapObj.newMap(); });
@@ -44,6 +45,7 @@ MapPg.init = function() {
         $('#panMap').click(function(){ MapObj.panMap(); });
         $('#selectRect').click(function(){ MapObj.selectRect(); });
         $('#selectPoly').click(function(){ MapObj.selectPoly();  });
+        $('#backoutBtn').click(function(){ MapObj.backoutBtn();  });
         $('.sureButton').click(function(){
             MapPg.submitForm();
         })
@@ -133,4 +135,7 @@ MapObj.selectRect = function(){
 };
 MapObj.selectPoly = function(){
     alert('selectPoly')
+};
+MapObj.backoutBtn = function(){
+    alert('backoutBtn')
 };

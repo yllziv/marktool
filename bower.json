@@ -18,6 +18,8 @@
   "dependencies": {
     "jquery": "~2.2.1",
     "underscore": "~1.8.3",
-    "jstree": "~3.2.1"
+    "jstree": "~3.2.1",
+    "jquery-treeview": "https://github.com/jzaefferer/jquery-treeview.git#~1.4.2",
+    "jPages": "https://github.com/luis-almeida/jPages.git"
   }
 }
