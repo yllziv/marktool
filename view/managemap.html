@@ -69,7 +69,7 @@
                     </div>
                     <ul id="canteditLayer">
                         <li><label><input type="checkbox" value="layer1"/>&nbsp layer1</label>
-                            <br/></br><img class="symbol" src="../img/symbol.jpg">
+                            <br/><img class="symbol" src="../img/symbol.jpg">
                         </li>
                         <li><label><input type="checkbox" value="layer2"/>&nbsp layer2</label>
                             <br/><img class="symbol" src="../img/symbol.jpg">
@@ -93,19 +93,22 @@
             <ul id="datatree" class="filetree treeview-famfamfam">
                 <li><span class="folder">数据目录</span>
                     <ul>
-                        <li><span class="图层中间库"></span></li>
+                        <li class="closed" id="layerMiddle"><span class="folder">图层中间库</span>
+                            <ul id="folder11">
+                            </ul>
+                        </li>
                         <li><span class="folder">底图库</span>
                             <ul>
-                                <li><span class="folder">PostGIS库</span>
+                                <li id="postgis" class="closed"><span class="folder">PostGIS库</span>
                                     <ul id="folder21">
-                                        <li><span class="file" draggable="true" data-name="路网数据">路网数据</span></li>
-                                        <li><span class="file" draggable="true" data-name="红绿灯数据">红绿灯数据</span></li>
+                                        <!--<li><span class="file" draggable="true" data-name="路网数据">路网数据</span></li>-->
+                                        <!--<li><span class="file" draggable="true" data-name="红绿灯数据">红绿灯数据</span></li>-->
                                     </ul>
                                 </li>
                                 <li class="closed"><span class="folder">WMTS服务</span>
                                     <ul>
-                                        <li><span class="file" draggable="true" data-name="武汉市矢量底图">武汉市矢量底图</span></li>
-                                        <li><span class="file" draggable="true" data-name="武汉市影像底图">武汉市影像底图</span></li>
+                                        <!--<li><span class="file" draggable="true" data-name="武汉市矢量底图">武汉市矢量底图</span></li>-->
+                                        <!--<li><span class="file" draggable="true" data-name="武汉市影像底图">武汉市影像底图</span></li>-->
                                     </ul>
                                 </li>
                             </ul>
@@ -120,6 +123,45 @@
     <!--地图开始-->
     <div class="mapContent"></div>
     <!--地图结束-->
+    <div id="connectDB">
+        <table>
+            <caption>连接数据库</caption>
+            <thead>
+            <tr>
+                <th>参数名</th>
+                <th>参数值</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>IP地址：</td>
+                <td><input type="text" value="202.114.114.34"></td>
+            </tr>
+            <tr>
+                <td>端口：</td>
+                <td><input type="text" value="5432"></td>
+            </tr>
+            <tr>
+                <td>用户名：</td>
+                <td><input type="text" value="postgres"></td>
+            </tr>
+            <tr>
+                <td>密码：</td>
+                <td><input type="text" value="admin"></td>
+            </tr>
+            <tr>
+                <td>数据库类型：</td>
+                <td><input type="text" value="postgis"></td>
+            </tr>
+            <tr>
+                <td>数据库名称：</td>
+                <td><input type="text" value="annotationtool"></td>
+            </tr>
+            </tbody>
+        </table>
+        <input id="cancelConnectDB" type="button" value="取消">
+        <input id="sureConnectDB" type="button" value="确定">
+    </div>
 </div>
 
 <!--自定义脚本开始-->

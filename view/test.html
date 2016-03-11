@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <!--js库开始-->
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
+    <!--js库结束-->
+
+    <!--css样式开始-->
+    <link type="text/css" rel="stylesheet" href="../css/reset.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/index.css"/>
+    <!--css样式结束-->
+</head>
+<div id="test">
+    <textarea id="inputContent"></textarea>
+    <textarea id="dataContent"></textarea>
+    <button id="mybtn">请求结果</button>
+    <textarea id="outputContent"></textarea>
+</div>
+<script>
+    $(document).ready(function(){
+        $('#mybtn').click(function(){
+            var requestURL = $('#inputContent').val();
+            var requestData = $('#dataContent').val();
+            $.post(requestURL,requestData,function(data){
+                $('#outputContent').val(data);
+            })
+        })
+    })
+</script>
+</body>
+</html>

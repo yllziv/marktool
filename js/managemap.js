@@ -1,10 +1,15 @@
 var MapPg = {
+    wmsLayer:[], // geoserver的wms图层
     init: function(){},
     resizePg: function(){}, // 页面大小变换
     submitForm: function(){}, // 提交表单
     addTask: function(){}, // 添加任务到任务列表
     getDatatree: function(){}, // 添加目录树
     deleteLayer: function(){}, // 删除图层
+    getLayer: function(){}, // 删除图层
+    cancelConnectDB: function(){}, // 删除图层
+    sureConnectDB: function(){}, // 删除图层
+    layerMiddle: function(){}, // 删除图层
 };
 
 var DragObj = {
@@ -14,7 +19,7 @@ var DragObj = {
     cantEditList:document.getElementById('canteditLayer'), // 不可编辑图层放置元素
     canEditBuffer:$('.canedit')[0], // 不可编辑图层放置元素缓冲区
     cantEditBuffer:$('.cantedit')[0], // 不可编辑图层放置元素缓冲区
-    dragMember:document.querySelectorAll('#datatree .file'), // 每个拖动的元素
+
     init: function(){},
     loadDrag: function(){}, // 加载拖拽元素，注册事件
     handleDragEnter: function(){}, // 拖拽进入事件
@@ -48,6 +53,7 @@ MapPg.init = function() {
     $(document).ready(function(){
         MapPg.resizePg();
         MapPg.getDatatree();
+        DragObj.init();
         $(window).resize(function(){
             MapPg.resizePg();
         });
@@ -70,9 +76,10 @@ MapPg.init = function() {
             MapPg.submitForm();
         });
         $('.deleteButton').click(function(){ MapPg.deleteLayer(); });
-
-        DragObj.init();
-
+        $('#postgis').click(function(){ MapPg.getLayer();});
+        $('#cancelConnectDB').click(function(){ MapPg.cancelConnectDB();});
+        $('#sureConnectDB').click(function(){ MapPg.sureConnectDB();});
+        $('#layerMiddle').click(function(){ MapPg.layerMiddle();});
     })
 
 };
@@ -116,6 +123,66 @@ MapPg.deleteLayer = function(){
     })
 };
 
+MapPg.getLayer = function(){
+    $('#connectDB').show();
+};
+
+MapPg.sureConnectDB = function(){
+    var connectParam = {"sessionID":"123","type":1,"database":{"ip":"202.114.114.34","port":5432,"user":"postgres","password":"admin","dbtype":"postgis","dbname":"annotationtool","schema":"public"}};
+    var formElement = $('#connectDB input[type="text"]');
+    connectParam.database.ip = formElement.eq(0).val();
+    connectParam.database.port = formElement.eq(1).val();
+    connectParam.database.user = formElement.eq(2).val();
+    connectParam.database.password = formElement.eq(3).val();
+    connectParam.database.dbtype = formElement.eq(4).val();
+    connectParam.database.dbname = formElement.eq(5).val();
+    $.post('http://192.168.106.100:8081/annatationtool/layer/conn_db',JSON.stringify(connectParam),function(data){
+        data = JSON.parse(data);
+        if(data.status == 0){
+            var ulHTML = '';
+            var layers = data.layers;
+            for(var i = 0; i < layers.length; i++){
+                ulHTML += '<li><span class="file" draggable="true" data-name="'+layers[i].name+'">'+layers[i].name+'</span></li>'
+            }
+            $('#folder21').html(ulHTML);
+            //console.log(ulHTML)
+            DragObj.init();
+        }else{
+            alert('连接出错')
+        }
+    })
+        .error(function() {
+            $('#folder21').html('<li><span class="file" draggable="true" data-name="layertest1">layertest1</span></li><li><span class="file" draggable="true" data-name="spatial_ref_sys">spatial_ref_sys</span></li><li><span class="file" draggable="true" data-name="layertest2">layertest2</span></li><li><span class="file" draggable="true" data-name="typeTest">typeTest</span></li><li><span class="file" draggable="true" data-name="projadmin">projadmin</span></li><li><span class="file" draggable="true" data-name="roads2">roads2</span></li><li><span class="file" draggable="true" data-name="taskcomment">taskcomment</span></li><li><span class="file" draggable="true" data-name="bk">bk</span></li><li><span class="file" draggable="true" data-name="project">project</span></li><li><span class="file" draggable="true" data-name="layermeta">layermeta</span></li><li><span class="file" draggable="true" data-name="usrproj">usrproj</span></li><li><span class="file" draggable="true" data-name="projlayer">projlayer</span></li><li><span class="file" draggable="true" data-name="sdd">sdd</span></li><li><span class="file" draggable="true" data-name="task">task</span></li><li><span class="file" draggable="true" data-name="roads">roads</span></li>');
+            DragObj.init();
+        })
+    $('#connectDB').hide();
+}
+
+MapPg.cancelConnectDB = function(){
+    $('#connectDB').hide();
+}
+MapPg.layerMiddle = function(){
+    $.post('http://192.168.106.100:8081/annatationtool/layer/conn_db',JSON.stringify({"sessionID":"123","type":0}),function(data){
+        data = JSON.parse(data);
+        if(data.status == 0){
+            var ulHTML = '';
+            MapPg.wmsLayer = data.layers;
+            for(var i = 0; i < MapPg.wmsLayer.length; i++){
+                ulHTML += '<li><span class="file" draggable="true" data-name="'+MapPg.wmsLayer[i].name+'">'+MapPg.wmsLayer[i].name+'</span></li>'
+            }
+            $('#folder11').html(ulHTML);
+            //console.log(ulHTML)
+            DragObj.init();
+        }else{
+            alert('连接出错')
+        }
+    })
+        .error(function() {
+            $('#folder11').html('<li><span class="file" draggable="true" data-name="layertest1">layertest1</span></li><li><span class="file" draggable="true" data-name="layertest2">layertest2</span></li>');
+            DragObj.init();
+        })
+}
+
 DragObj.init = function(){
     DragObj.loadDrag();
 }
@@ -133,7 +200,6 @@ DragObj.loadDrag = function() {
     // 每个目标 有自己的dragover事件
     DragObj.canEditList.addEventListener('dragover',DragObj.handleCanEditDragOver,false);
     DragObj.cantEditList.addEventListener('dragover',DragObj.handleCantEditDragOver,false);
-
     // 外围的div框起到缓冲作用，用来重置dragover样式
     [].forEach.call(bufferDiv,function(buffer){
         buffer.addEventListener('dragover',DragObj.handleDragOverOuter, false);
@@ -141,7 +207,7 @@ DragObj.loadDrag = function() {
 
     // 每个拖动元素设置开始拖动和结束拖动事件
 
-    [].forEach.call(DragObj.dragMember, function(member){
+    [].forEach.call(document.querySelectorAll('#datatree .file'), function(member){
         member.addEventListener('dragstart',DragObj.handleDragStart, true);
         member.addEventListener('dragend',DragObj.handleDragEnd, true);
     })
@@ -160,20 +226,20 @@ DragObj.handleDragStart = function(e){
 
 // 停止传播，阻止默认的拖动动作
 DragObj.handleDragEnter = function(e) {
-    //console.log('enter');
+    console.log('enter');
     e.stopPropagation();
     e.preventDefault();
     return false;
 };
 
 DragObj.handleDragLeave = function(e) {
-    //console.log('leave');
+    console.log('leave');
     return false;
 };
 
 // 移动到缓冲区上，关闭高亮效果
 DragObj.handleDragOverOuter = function(e){
-    //console.log('handleDragOverOuter');
+    console.log('handleDragOverOuter');
     DragObj.canEditList.className = 'validtarget';
     DragObj.cantEditList.className = 'validtarget';
     e.stopPropagation();
@@ -181,7 +247,7 @@ DragObj.handleDragOverOuter = function(e){
 };
 
 DragObj.handleCanEditDragOver = function(e) {
-    //console.log('handleCanEditDragOver')
+    console.log('handleCanEditDragOver')
     e.dataTransfer.dropEffect = 'copy';
     e.stopPropagation();
     e.preventDefault();
@@ -190,7 +256,7 @@ DragObj.handleCanEditDragOver = function(e) {
 };
 
 DragObj.handleCantEditDragOver = function(e) {
-    //console.log('handleCantEditDragOver')
+    console.log('handleCantEditDragOver')
     e.dataTransfer.dropEffect = 'copy';
     e.stopPropagation();
     e.preventDefault();
