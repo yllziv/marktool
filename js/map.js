@@ -14,16 +14,16 @@ var MapObj = {
     baseLayers:"",     //底图图层
     taskSource:"",    //任务范围图层的source
     taskLayer:"",      //任务范围图层
+    taskFID:[],        //任务范围的FID值
     markLayer:"",      //标点图层
     viewCenter:"",     //地图中心点
     zoomInit:"",       //初始化zoom大小
     draw:"",           //绘制操作
     selcet:"",         //选择操作
     modify:"",         //修改操作
-    current_feature:"",    //上一个绘制的图形
+    current_feature:"",    //当前绘制的图形
+    //工具条函数
     init: function(){},  // 初始化地图
-    createMap:function(){},  //创建openlayer地图
-    drawInteraction:function(){},  //绘制函数
     newMap: function(){}, // 新建图层
     saveMap: function(){}, // 保存
     zoomout: function(){}, // 放大
@@ -33,8 +33,12 @@ var MapObj = {
     selectRect: function(){}, // 按矩形选择
     selectPoly: function(){}, // 按多边形选择
     backoutBtn: function(){}, // 撤销按钮
+    createMap:function(){},  //创建openlayer地图
+    drawInteraction:function(){},  //绘制函数
     getText:function(){},  //获取标注信息
-    addTask: function(){}   // 添加任务到任务列表(即增加标注)
+    addTask: function(){},   // 添加任务到任务列表(即增加标注)
+    //保存数据
+    saveData:function(){}      //根据FID获取该要素的属性
 
 };
 
@@ -159,69 +163,32 @@ MapObj.init = function(){
         })
     })
 
-    //点击后要素样式
-    MapObj.selectStyle = (function() {
-        var styles = {};
-        styles['Polygon'] = [
-            new ol.style.Style({
-                fill: new ol.style.Fill({
-                    color: [255, 255, 255, 0.5]
-                })
-            }),
-            new ol.style.Style({
-                stroke: new ol.style.Stroke({
-                    color: [255, 255, 255, 1],
-                    width: 5
-                })
-            }),
-            new ol.style.Style({
-                stroke: new ol.style.Stroke({
-                    color: [0, 153, 255, 1],
-                    width: 3
-                })
+    //选中的要素样式
+    MapObj.selectStyle = new ol.style.Style({
+        fill: new ol.style.Fill({
+            color:  [255, 255, 255, 0.5]
+        }),
+        stroke: new ol.style.Stroke({
+            color: [0, 153, 255, 1],
+            width: 2
+        }),
+        image: new ol.style.Circle({
+            radius: 7,
+            fill: new ol.style.Fill({
+                color: '#ffcc33'
             })
-        ];
-        styles['MultiPolygon'] = styles['Polygon'];
-
-        styles['LineString'] = [
-            new ol.style.Style({
-                stroke: new ol.style.Stroke({
-                    color: [255, 255, 255, 1],
-                    width: 5
-                })
+        }),
+        text: new ol.style.Text({ //文本样式
+            font: '12px Calibri,sans-serif',
+            fill: new ol.style.Fill({
+                color: '#000'
             }),
-            new ol.style.Style({
-                stroke: new ol.style.Stroke({
-                    color: [0, 153, 255, 1],
-                    width: 3
-                })
+            stroke: new ol.style.Stroke({
+                color: '#fff',
+                width: 3
             })
-        ];
-        styles['MultiLineString'] = styles['LineString'];
-
-        styles['Point'] = [
-            new ol.style.Style({
-                image: new ol.style.Circle({
-                    radius: 7,
-                    fill: new ol.style.Fill({
-                        color: [0, 153, 255, 1]
-                    }),
-                    stroke: new ol.style.Stroke({
-                        color: [255, 255, 255, 0.75],
-                        width: 1.5
-                    })
-                }),
-                zIndex: 100000
-            })
-        ];
-        styles['MultiPoint'] = styles['Point'];
-
-        styles['GeometryCollection'] = styles['Polygon'].concat(styles['Point']);
-
-        return function(feature) {
-            return styles[feature.getGeometry().getType()];
-        };
-    })();
+        })
+    })
 
     //底图图层
     MapObj.baseLayers = new ol.layer.Tile({
@@ -300,14 +267,26 @@ MapObj.drawInteraction = function(source,type) {
 
 
         //画图层开始前先记录此刻的图形
-        MapObj.draw.on('drawstart',
+        MapObj.draw.on('drawend',
             function(evt) {
 //                // set old_feature
 //                if(MapObj.last_feature!=null && MapObj.last_feature!="undifined"){
 //                    //删除前一个图层
 //                    source.removeFeature(MapObj.last_feature);
 //                }
+                //设置唯一标识值：时间戳 + 用户ID
+                var timestamp = new Date().getTime();
+                var userID = "0001"
+                var FID = timestamp + userID
+                evt.feature.set("FID",FID);
+                evt.feature.set("taskPeople","");
+                MapObj.taskFID.push(FID);
+                if(MapObj.current_feature!="")
+                {
+                    MapObj.current_feature.setStyle(MapObj.defaultStyle);
+                }
                 MapObj.current_feature = evt.feature;
+                MapObj.current_feature.setStyle(MapObj.selectStyle);
             }, this);
 
         MapObj.map.addInteraction(MapObj.draw);
@@ -321,7 +300,7 @@ MapObj.newMap = function(){
     alert('newMap')
 };
 MapObj.saveMap = function(){
-    alert('saveMap')
+    MapObj.saveData(MapObj.taskLayer);
 };
 MapObj.zoomout = function(){
     var view = MapObj.map.getView();
@@ -355,7 +334,22 @@ MapObj.selectPoly = function(){
     MapObj.drawInteraction(MapObj.taskSource,"Polygon");
 };
 MapObj.backoutBtn = function(){
-    alert('backoutBtn')
+    var features =  MapObj.taskSource.getFeatures();
+    if(features!= null&& features.length > 0)
+    {
+        for (var x in features)
+        {
+            //如果没有指派任务,则清除绘制
+            if(features[x].get("taskPeople") == "")
+            {
+                MapObj.taskSource.removeFeature(features[x]);
+                MapObj.taskFID.splice(x,1);
+            }
+        }
+        MapObj.current_feature = "";
+        alert("清除空任务的绘制!\n\n 温馨提示：撤销任务请到任务界面操作");
+    }
+
 };
 
 MapObj.getText = function(feature){
@@ -391,10 +385,41 @@ MapObj.addTask = function(taskPeople){
         })
     });
 
-    MapObj.current_feature.set("taskPeople",taskPeople);
-    var text = MapObj.current_feature.get("taskPeople");
-    defaultStyle.getText().setText(text);
-    MapObj.current_feature.setStyle(defaultStyle);
+    if(MapObj.current_feature != "")
+    {
+        MapObj.current_feature.set("taskPeople",taskPeople);
+        var text = MapObj.current_feature.get("taskPeople");
+        defaultStyle.getText().setText(text);
+        MapObj.current_feature.setStyle(defaultStyle);
+        MapObj.current_feature = "";
+    }
+    else
+        alert("当前没有可指派任务的范围");
+}
+
+
+//保存数据
+MapObj.saveData = function(layer) {
+    var data_type = "GeoJSON";
+    var format = new ol.format[data_type](),
+        data;
+    try {
+        //将绘制的图层转化为所需的格式
+        data = format.writeFeatures(layer.getSource().getFeatures());
+    } catch (e) {
+        alert("保存出错！"+e.name + ": " + e.message);
+        return;
+    }
+    if (data_type === 'GeoJSON') {
+        // format is JSON
+        var dataSave = JSON.stringify(data);
+        alert(dataSave);
+    } else {
+        // format is XML (GPX or KML)
+        var serializer = new XMLSerializer();
+        var dataSave = serializer.serializeToString(data);
+        alert(dataSave);
+    }
 }
 
 

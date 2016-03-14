@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <!--js库开始-->
-    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>     <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
+    <script type="text/javascript" src="../bower_components/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
+    <script type="text/javascript" src="../js/zivlib.js"></script>
     <!--js库结束-->
 
     <!--css样式开始-->
@@ -31,7 +33,7 @@
             <div class="commentStream">
                 <ul class="commentUl">
                     <li class="commentLi">
-                        <div class="newEvent">
+                        <div class="newEvent" id="createTask">
                             <div class="eventLogo">
                                 <img src="../img/taskdetail/NewLogo.png">
                             </div>
@@ -41,33 +43,17 @@
                         </div>
                     </li>
                     <li class="commentLi">
-                        <div class="doneEvent">
+                        <div class="doneEvent" id="startTask">
                             <div class="eventLogo">
                                 <img src="../img/taskdetail/DoneLogo.png">
                             </div>
                             <span class="taskTime">01-23 21:30</span>
                             <span class="taskPer">刘凌佳</span>
-                            <span class="taskAction">完成了任务</span>
+                            <span class="taskAction">开始了任务</span>
                         </div>
                     </li>
                     <li class="commentLi">
-                        <div class="tComment">
-                            <div class="perLogo">
-                                <img src="../img/taskdetail/头像1.png">
-                            </div>
-                            <div class="comDetail">
-                                <div class="comInfo">
-                                    <span class="comPer">呙维</span>
-                                    <span class="comTime">1月24日</span>
-                                </div>
-                                <div class="comContent">
-                                    <span class="contentInfo">未达到编写要求</span>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="commentLi">
-                        <div class="doneEvent">
+                        <div class="doneEvent" id="endTask">
                             <div class="eventLogo">
                                 <img src="../img/taskdetail/DoneLogo.png">
                             </div>
@@ -76,23 +62,44 @@
                             <span class="taskAction">完成了任务</span>
                         </div>
                     </li>
+                    <!--<li class="commentLi">-->
+                        <!--<div class="tComment">-->
+                            <!--<div class="perLogo">-->
+                                <!--<img src="../img/taskdetail/头像1.png">-->
+                            <!--</div>-->
+                            <!--<div class="comDetail">-->
+                                <!--<div class="comInfo">-->
+                                    <!--<span class="comPer">呙维</span>-->
+                                    <!--<span class="comTime">1月24日</span>-->
+                                <!--</div>-->
+                                <!--<div class="comContent">-->
+                                    <!--<span class="contentInfo">未达到编写要求</span>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
                 </ul>
             </div>
             <div class="commentForm">
-                <form>
+                <div>
                     <div class="perLogo">
                         <img src="../img/taskdetail/头像3.png">
                     </div>
-                    <div class="comText">
-                        <textarea name="你的评论" placeholder="点击发表评论"></textarea>
+                    <div class="comText" >
+                        <textarea id="comText" name="你的评论" placeholder="点击发表评论"></textarea>
                     </div>
                     <div class="comBtn">
-                        <button type="submit" name="发表评论">发表评论</button>
+                        <button type="button" id="pulishComment" name="发表评论">发表评论</button>
                     </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<!--自定义脚本开始-->
+<script type="text/javascript" src="../js/taskdetail.js"></script>
+<!--自定义脚本结束-->
+
 </body>
 </html>

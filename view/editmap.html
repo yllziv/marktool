@@ -7,6 +7,7 @@
     <script type="text/javascript" src="../bower_components/underscore/underscore.js"></script>
     <script type="text/javascript" src="../bower_components/jPages/js/jPages.js"></script>
     <script type="text/javascript" src="../js/zivlib.js"></script>
+    <script type="text/javascript" src="../bower_components/ol3/ol.js"></script>
     <!--js库结束-->
 
     <!--css样式开始-->
@@ -14,6 +15,7 @@
     <link type="text/css" rel="stylesheet" href="../bower_components/jPages/css/jPages.css"/>
     <link type="text/css" rel="stylesheet" href="../bower_components/jPages/css/animate.css"/>
     <link type="text/css" rel="stylesheet" href="../css/index.css"/>
+    <link type="text/css" rel="stylesheet" href="../bower_components/ol3/ol.css" />
     <!--css样式结束-->
 </head>
 <div id="editmap">
@@ -40,8 +42,8 @@
                     <li id="editPoint"><img src="../img/toolbar/dian.png"><span>点</span></li>
                     <li id="editLine"><img src="../img/toolbar/xian.png"><span>线</span></li>
                     <li id="editPolygon"><img src="../img/toolbar/mian.png"><span>面</span></li>
-                    <li id="selectFeature"><img src="../img/toolbar/xzys.png"><span>选择要素</span></li>
                     <li id="modifyFeature"><img src="../img/toolbar/xgys.png"><span>修改要素</span></li>
+                    <li id="selectFeature"><img src="../img/toolbar/xzys.png"><span>选择要素</span></li>
                     <li id="deleteFeature"><img src="../img/toolbar/scys.png"><span>删除要素</span></li>
                 </ul>
             </div>
@@ -219,7 +221,7 @@
     <!--任务列表结束-->
 
     <!--地图开始-->
-    <div class="mapContent"></div>
+    <div id = "mapDiv" class="mapContent"></div>
     <!--地图结束-->
 </div>
 
