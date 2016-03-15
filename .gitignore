@@ -2,3 +2,4 @@ bower_components
 node_modules
 .idea
 .svn
+.DS_STORE
